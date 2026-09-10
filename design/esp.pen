@@ -2074,6 +2074,3343 @@
           ]
         }
       ]
+    },
+    {
+      "type": "frame",
+      "id": "i2A3z",
+      "x": 1688,
+      "y": 0,
+      "name": "Home — Desktop",
+      "clip": true,
+      "width": 1440,
+      "fill": "$cream",
+      "layout": "vertical",
+      "children": [
+        {
+          "id": "E62I4B",
+          "type": "ref",
+          "ref": "RhOlt",
+          "name": "Home/NavBar"
+        },
+        {
+          "type": "frame",
+          "id": "RpKBP",
+          "name": "Home/Hero",
+          "clip": true,
+          "width": "fill_container",
+          "height": 720,
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "wQAfp",
+              "layoutPosition": "absolute",
+              "x": 0,
+              "y": 0,
+              "name": "Hero BG",
+              "width": 1440,
+              "height": 720,
+              "fill": "$stone",
+              "layout": "none"
+            },
+            {
+              "type": "text",
+              "id": "f5vkZ",
+              "layoutPosition": "absolute",
+              "x": 0,
+              "y": 0,
+              "name": "Hero Caption",
+              "opacity": 0.3,
+              "fill": "$navy",
+              "textGrowth": "fixed-width-height",
+              "width": 1440,
+              "height": 720,
+              "content": "Boy + girl players in navy ESP kits at a professional Spanish club, city and coast behind them",
+              "textAlign": "center",
+              "textAlignVertical": "middle",
+              "fontFamily": "Source Sans 3",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "rectangle",
+              "id": "xfWmc",
+              "layoutPosition": "absolute",
+              "x": 0,
+              "y": 0,
+              "name": "Hero Gradient",
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 90,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#08243AE6",
+                    "position": 0
+                  },
+                  {
+                    "color": "#08243ACC",
+                    "position": 0.45
+                  },
+                  {
+                    "color": "#08243A33",
+                    "position": 0.85
+                  },
+                  {
+                    "color": "#08243A00",
+                    "position": 1
+                  }
+                ]
+              },
+              "width": 1440,
+              "height": 720
+            },
+            {
+              "type": "frame",
+              "id": "sobvE",
+              "layoutPosition": "absolute",
+              "x": 120,
+              "y": 0,
+              "name": "Hero Content",
+              "width": 680,
+              "height": 720,
+              "layout": "vertical",
+              "gap": 24,
+              "padding": [
+                0,
+                0,
+                48,
+                0
+              ],
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "ha4N4",
+                  "name": "H1",
+                  "fill": "$white",
+                  "textGrowth": "fixed-width",
+                  "width": 680,
+                  "content": "TRAIN WITH THE CLUBS.\nLIVE THE CULTURE.\nEXPERIENCE EUROPEAN FOOTBALL.",
+                  "lineHeight": 1.06,
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 64,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "snUzD",
+                  "name": "Sub",
+                  "fill": "$white",
+                  "textGrowth": "fixed-width",
+                  "width": 560,
+                  "content": "Week-long soccer experiences for boys and girls ages 12–18 with professional clubs in Spain.",
+                  "lineHeight": 1.45,
+                  "fontFamily": "Source Sans 3",
+                  "fontSize": 22,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "PiCAm",
+                  "name": "Support",
+                  "opacity": 0.85,
+                  "fill": "$white",
+                  "textGrowth": "fixed-width",
+                  "width": 520,
+                  "content": "Train with club coaches. Experience their methodology and facilities. Compete against local players. Discover the city and culture surrounding the club.",
+                  "lineHeight": 1.5,
+                  "fontFamily": "Source Sans 3",
+                  "fontSize": 17,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "C8el0F",
+                  "name": "Hero Buttons",
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "id": "UBEFA",
+                      "type": "ref",
+                      "ref": "yKRG5",
+                      "name": "CTA Primary",
+                      "descendants": {
+                        "zzPzv": {
+                          "content": "EXPLORE 2027 EXPERIENCES"
+                        }
+                      }
+                    },
+                    {
+                      "id": "vpqzF",
+                      "type": "ref",
+                      "ref": "U1y92F",
+                      "name": "CTA Secondary",
+                      "descendants": {
+                        "oDefQ": {
+                          "content": "BRING YOUR TEAM"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "BPqBh",
+          "name": "Home/TrustStrip",
+          "width": "fill_container",
+          "fill": "$navy",
+          "padding": [
+            32,
+            80
+          ],
+          "justifyContent": "space_around",
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "Yt6Ld",
+              "type": "ref",
+              "ref": "VtRvF",
+              "name": "Professional club partners",
+              "descendants": {
+                "vbq8j": {
+                  "icon": "shield"
+                },
+                "Y4UIv": {
+                  "content": "Professional club partners"
+                }
+              }
+            },
+            {
+              "type": "rectangle",
+              "id": "eWyd7",
+              "name": "Divider 1",
+              "opacity": 0.15,
+              "fill": "$white",
+              "width": 1,
+              "height": 56
+            },
+            {
+              "id": "u4PrYC",
+              "type": "ref",
+              "ref": "VtRvF",
+              "name": "Boys & girls ages 12–18",
+              "descendants": {
+                "vbq8j": {
+                  "icon": "users"
+                },
+                "Y4UIv": {
+                  "content": "Boys & girls ages 12–18"
+                }
+              }
+            },
+            {
+              "type": "rectangle",
+              "id": "G7eHA",
+              "name": "Divider 2",
+              "opacity": 0.15,
+              "fill": "$white",
+              "width": 1,
+              "height": 56
+            },
+            {
+              "id": "BTyuc",
+              "type": "ref",
+              "ref": "VtRvF",
+              "name": "Player-only or with family",
+              "descendants": {
+                "vbq8j": {
+                  "icon": "user-check"
+                },
+                "Y4UIv": {
+                  "content": "Player-only or with family"
+                }
+              }
+            },
+            {
+              "type": "rectangle",
+              "id": "jqyaH",
+              "name": "Divider 3",
+              "opacity": 0.15,
+              "fill": "$white",
+              "width": 1,
+              "height": 56
+            },
+            {
+              "id": "toiHB",
+              "type": "ref",
+              "ref": "VtRvF",
+              "name": "Bilingual staff (no Spanish required)",
+              "descendants": {
+                "vbq8j": {
+                  "icon": "languages"
+                },
+                "Y4UIv": {
+                  "content": "Bilingual staff (no Spanish required)"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "YI7Y6",
+          "name": "Home/PartnerClubs",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 40,
+          "padding": [
+            96,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "fu67F",
+              "type": "ref",
+              "ref": "V7ladB",
+              "name": "Eyebrow",
+              "descendants": {
+                "VHX2O": {
+                  "content": "LEAD WITH THE CLUBS"
+                }
+              }
+            },
+            {
+              "type": "text",
+              "id": "NQpF2",
+              "name": "H2",
+              "fill": "$navy",
+              "textGrowth": "fixed-width",
+              "width": 800,
+              "content": "TRAIN WITH SPAIN'S\nPROFESSIONAL CLUBS",
+              "lineHeight": 1.08,
+              "textAlign": "center",
+              "fontFamily": "Playfair Display",
+              "fontSize": 48,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "Jw5Hr",
+              "name": "Intro",
+              "fill": "$slate",
+              "textGrowth": "fixed-width",
+              "width": 720,
+              "content": "Every experience combines the identity of the club with the city and culture around it.",
+              "lineHeight": 1.55,
+              "textAlign": "center",
+              "fontFamily": "Source Sans 3",
+              "fontSize": 18,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "P0OPj",
+              "name": "Flow Line",
+              "fill": "$gold",
+              "content": "Club  →  methodology  →  facilities  →  coaches  →  competition  →  city  →  culture",
+              "textAlign": "center",
+              "fontFamily": "Source Sans 3",
+              "fontSize": 14,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "df5wz",
+              "name": "Club Grid",
+              "layout": "vertical",
+              "gap": 40,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Q4rNRA",
+                  "name": "Row 1",
+                  "gap": 64,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "id": "QLxA0",
+                      "type": "ref",
+                      "ref": "L4bt7",
+                      "name": "Real Sociedad",
+                      "descendants": {
+                        "Wfry8": {
+                          "content": "Real Sociedad"
+                        },
+                        "al3H7": {
+                          "content": "San Sebastián"
+                        }
+                      }
+                    },
+                    {
+                      "id": "nH9wU",
+                      "type": "ref",
+                      "ref": "L4bt7",
+                      "name": "Girona FC",
+                      "descendants": {
+                        "Wfry8": {
+                          "content": "Girona FC"
+                        },
+                        "al3H7": {
+                          "content": "Girona"
+                        }
+                      }
+                    },
+                    {
+                      "id": "IrIbn",
+                      "type": "ref",
+                      "ref": "L4bt7",
+                      "name": "Real Oviedo",
+                      "descendants": {
+                        "Wfry8": {
+                          "content": "Real Oviedo"
+                        },
+                        "al3H7": {
+                          "content": "Oviedo"
+                        }
+                      }
+                    },
+                    {
+                      "id": "r7VpKa",
+                      "type": "ref",
+                      "ref": "L4bt7",
+                      "name": "Sporting de Gijón",
+                      "descendants": {
+                        "Wfry8": {
+                          "content": "Sporting de Gijón"
+                        },
+                        "al3H7": {
+                          "content": "Gijón"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "H2MUMM",
+                  "name": "Row 2",
+                  "gap": 64,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "id": "tBxLA",
+                      "type": "ref",
+                      "ref": "L4bt7",
+                      "name": "Racing Santander",
+                      "descendants": {
+                        "Wfry8": {
+                          "content": "Racing Santander"
+                        },
+                        "al3H7": {
+                          "content": "Santander"
+                        }
+                      }
+                    },
+                    {
+                      "id": "BKyLg",
+                      "type": "ref",
+                      "ref": "L4bt7",
+                      "name": "Deportivo",
+                      "descendants": {
+                        "Wfry8": {
+                          "content": "Deportivo"
+                        },
+                        "al3H7": {
+                          "content": "A Coruña"
+                        }
+                      }
+                    },
+                    {
+                      "id": "BeSK4",
+                      "type": "ref",
+                      "ref": "L4bt7",
+                      "name": "Levante UD",
+                      "descendants": {
+                        "Wfry8": {
+                          "content": "Levante UD"
+                        },
+                        "al3H7": {
+                          "content": "Valencia"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Tkqfu",
+              "name": "Bottom Row",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "RAKDz",
+                  "type": "ref",
+                  "ref": "yKRG5",
+                  "name": "CTA",
+                  "descendants": {
+                    "zzPzv": {
+                      "content": "EXPLORE ALL CLUB EXPERIENCES"
+                    }
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "yKis6",
+                  "name": "Script Tagline",
+                  "fill": "$gold",
+                  "content": "Different clubs. One unforgettable country.",
+                  "fontFamily": "Caveat",
+                  "fontSize": 32,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "TY4ZW",
+          "name": "Home/ExperienceCards",
+          "width": "fill_container",
+          "fill": "$white",
+          "layout": "vertical",
+          "gap": 40,
+          "padding": [
+            96,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "G8vVn",
+              "name": "Subtitle",
+              "fill": "$slate",
+              "textGrowth": "fixed-width",
+              "width": 720,
+              "content": "The destination still matters — but it should be inseparable from the club.",
+              "lineHeight": 1.5,
+              "textAlign": "center",
+              "fontFamily": "Source Sans 3",
+              "fontSize": 18,
+              "fontWeight": "normal",
+              "fontStyle": "italic"
+            },
+            {
+              "type": "frame",
+              "id": "vrc0r",
+              "name": "Cards Row",
+              "gap": 24,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "id": "TC1fX",
+                  "type": "ref",
+                  "ref": "lZhKT",
+                  "name": "REAL SOCIEDAD Card",
+                  "width": 380,
+                  "descendants": {
+                    "hJPU4": {
+                      "content": "Training at Zubieta + La Concha bay"
+                    },
+                    "nkCpQ": {
+                      "content": "REAL SOCIEDAD"
+                    },
+                    "EqJmE": {
+                      "content": "SAN SEBASTIÁN"
+                    },
+                    "T5ME4s": {
+                      "content": "Train in one of Spain's strongest development cultures. Then experience La Concha, the Old Town, pintxos and the Basque Country."
+                    },
+                    "xO1K5": {
+                      "content": "EXPLORE THE EXPERIENCE →"
+                    }
+                  }
+                },
+                {
+                  "id": "w3YFB",
+                  "type": "ref",
+                  "ref": "lZhKT",
+                  "name": "GIRONA FC Card",
+                  "width": 380,
+                  "descendants": {
+                    "hJPU4": {
+                      "content": "Girona training + medieval old town"
+                    },
+                    "nkCpQ": {
+                      "content": "GIRONA FC"
+                    },
+                    "EqJmE": {
+                      "content": "GIRONA + BARCELONA"
+                    },
+                    "T5ME4s": {
+                      "content": "Modern professional football in Catalonia. Medieval Girona, Mediterranean life and optional Barcelona experiences."
+                    },
+                    "xO1K5": {
+                      "content": "EXPLORE THE EXPERIENCE →"
+                    }
+                  }
+                },
+                {
+                  "id": "KF1BM",
+                  "type": "ref",
+                  "ref": "lZhKT",
+                  "name": "RACING SANTANDER Card",
+                  "width": 380,
+                  "descendants": {
+                    "hJPU4": {
+                      "content": "Racing training + Santander bay"
+                    },
+                    "nkCpQ": {
+                      "content": "RACING SANTANDER"
+                    },
+                    "EqJmE": {
+                      "content": "SANTANDER"
+                    },
+                    "T5ME4s": {
+                      "content": "Historic football on Spain's north coast. Beaches, mountains and Cantabrian culture around the soccer program."
+                    },
+                    "xO1K5": {
+                      "content": "EXPLORE THE EXPERIENCE →"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Q3mH54",
+          "name": "Home/HowItWorks",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            96,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "d1Fo5",
+              "name": "H2",
+              "fill": "$navy",
+              "textGrowth": "fixed-width",
+              "width": 800,
+              "content": "A SIMPLE PROCESS.\nAN EXTRAORDINARY EXPERIENCE.",
+              "lineHeight": 1.08,
+              "textAlign": "center",
+              "fontFamily": "Playfair Display",
+              "fontSize": 48,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "UGSIC",
+              "name": "Steps Row",
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "FgkJj",
+                  "name": "Step 1",
+                  "width": 200,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Bzb2N",
+                      "name": "Number Circle",
+                      "width": 40,
+                      "height": 40,
+                      "fill": "$navy",
+                      "cornerRadius": 20,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "tmVuc",
+                          "layoutPosition": "absolute",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Number",
+                          "fill": "$white",
+                          "textGrowth": "fixed-width-height",
+                          "width": 40,
+                          "height": 40,
+                          "content": "1",
+                          "textAlign": "center",
+                          "textAlignVertical": "middle",
+                          "fontFamily": "Source Sans 3",
+                          "fontSize": 16,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "icon",
+                      "id": "aymtb",
+                      "name": "Step Icon",
+                      "width": 40,
+                      "height": 40,
+                      "icon": "calendar",
+                      "library": "lucide",
+                      "fill": "$navy"
+                    },
+                    {
+                      "type": "text",
+                      "id": "iaUwD",
+                      "name": "Step Title",
+                      "fill": "$navy",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Choose your club\nand dates",
+                      "lineHeight": 1.35,
+                      "textAlign": "center",
+                      "fontFamily": "Source Sans 3",
+                      "fontSize": 16,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "G41mwN",
+                      "name": "Step Desc",
+                      "fill": "$slate",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Explore our club experiences and find the right fit.",
+                      "lineHeight": 1.45,
+                      "textAlign": "center",
+                      "fontFamily": "Source Sans 3",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "gfKGX",
+                  "name": "Arrow 1",
+                  "height": 40,
+                  "layout": "vertical",
+                  "padding": [
+                    0,
+                    8
+                  ],
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "V16do",
+                      "name": "Arrow Icon",
+                      "fill": "$gold",
+                      "content": "→",
+                      "fontFamily": "Source Sans 3",
+                      "fontSize": 18,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "jZHcM",
+                  "name": "Step 2",
+                  "width": 200,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "HE58G",
+                      "name": "Number Circle",
+                      "width": 40,
+                      "height": 40,
+                      "fill": "$navy",
+                      "cornerRadius": 20,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Naq6B",
+                          "layoutPosition": "absolute",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Number",
+                          "fill": "$white",
+                          "textGrowth": "fixed-width-height",
+                          "width": 40,
+                          "height": 40,
+                          "content": "2",
+                          "textAlign": "center",
+                          "textAlignVertical": "middle",
+                          "fontFamily": "Source Sans 3",
+                          "fontSize": 16,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "icon",
+                      "id": "DlYIE",
+                      "name": "Step Icon",
+                      "width": 40,
+                      "height": 40,
+                      "icon": "file-text",
+                      "library": "lucide",
+                      "fill": "$navy"
+                    },
+                    {
+                      "type": "text",
+                      "id": "gmNZ8",
+                      "name": "Step Title",
+                      "fill": "$navy",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Apply and secure\nyour spot",
+                      "lineHeight": 1.35,
+                      "textAlign": "center",
+                      "fontFamily": "Source Sans 3",
+                      "fontSize": 16,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "i2C2k",
+                      "name": "Step Desc",
+                      "fill": "$slate",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Complete a short application. Reserve your spot with a deposit.",
+                      "lineHeight": 1.45,
+                      "textAlign": "center",
+                      "fontFamily": "Source Sans 3",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "jLMXI",
+                  "name": "Arrow 2",
+                  "height": 40,
+                  "layout": "vertical",
+                  "padding": [
+                    0,
+                    8
+                  ],
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "nfKcZ",
+                      "name": "Arrow Icon",
+                      "fill": "$gold",
+                      "content": "→",
+                      "fontFamily": "Source Sans 3",
+                      "fontSize": 18,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "cByVI",
+                  "name": "Step 3",
+                  "width": 200,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "wvDcX",
+                      "name": "Number Circle",
+                      "width": 40,
+                      "height": 40,
+                      "fill": "$navy",
+                      "cornerRadius": 20,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "chz0p",
+                          "layoutPosition": "absolute",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Number",
+                          "fill": "$white",
+                          "textGrowth": "fixed-width-height",
+                          "width": 40,
+                          "height": 40,
+                          "content": "3",
+                          "textAlign": "center",
+                          "textAlignVertical": "middle",
+                          "fontFamily": "Source Sans 3",
+                          "fontSize": 16,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "icon",
+                      "id": "QaZS9",
+                      "name": "Step Icon",
+                      "width": 40,
+                      "height": 40,
+                      "icon": "plane",
+                      "library": "lucide",
+                      "fill": "$navy"
+                    },
+                    {
+                      "type": "text",
+                      "id": "U0JHRd",
+                      "name": "Step Title",
+                      "fill": "$navy",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "We handle\nthe logistics",
+                      "lineHeight": 1.35,
+                      "textAlign": "center",
+                      "fontFamily": "Source Sans 3",
+                      "fontSize": 16,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "FeXRd",
+                      "name": "Step Desc",
+                      "fill": "$slate",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "We coordinate accommodation, training, local transportation and activities.",
+                      "lineHeight": 1.45,
+                      "textAlign": "center",
+                      "fontFamily": "Source Sans 3",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "VEsrY",
+                  "name": "Arrow 3",
+                  "height": 40,
+                  "layout": "vertical",
+                  "padding": [
+                    0,
+                    8
+                  ],
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "MkZeK",
+                      "name": "Arrow Icon",
+                      "fill": "$gold",
+                      "content": "→",
+                      "fontFamily": "Source Sans 3",
+                      "fontSize": 18,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "DXadA",
+                  "name": "Step 4",
+                  "width": 200,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "QzfrL",
+                      "name": "Number Circle",
+                      "width": 40,
+                      "height": 40,
+                      "fill": "$navy",
+                      "cornerRadius": 20,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "L6eXCO",
+                          "layoutPosition": "absolute",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Number",
+                          "fill": "$white",
+                          "textGrowth": "fixed-width-height",
+                          "width": 40,
+                          "height": 40,
+                          "content": "4",
+                          "textAlign": "center",
+                          "textAlignVertical": "middle",
+                          "fontFamily": "Source Sans 3",
+                          "fontSize": 16,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "icon",
+                      "id": "N9kcB",
+                      "name": "Step Icon",
+                      "width": 40,
+                      "height": 40,
+                      "icon": "circle-dot",
+                      "library": "lucide",
+                      "fill": "$navy"
+                    },
+                    {
+                      "type": "text",
+                      "id": "iLg2i",
+                      "name": "Step Title",
+                      "fill": "$navy",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Live the\nexperience",
+                      "lineHeight": 1.35,
+                      "textAlign": "center",
+                      "fontFamily": "Source Sans 3",
+                      "fontSize": 16,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "BvMZs",
+                      "name": "Step Desc",
+                      "fill": "$slate",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Train, compete, explore and immerse yourself in the club and the city.",
+                      "lineHeight": 1.45,
+                      "textAlign": "center",
+                      "fontFamily": "Source Sans 3",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "yyyQ1",
+                  "name": "Arrow 4",
+                  "height": 40,
+                  "layout": "vertical",
+                  "padding": [
+                    0,
+                    8
+                  ],
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "oVzre",
+                      "name": "Arrow Icon",
+                      "fill": "$gold",
+                      "content": "→",
+                      "fontFamily": "Source Sans 3",
+                      "fontSize": 18,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Sl86D",
+                  "name": "Step 5",
+                  "width": 200,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "CupMx",
+                      "name": "Number Circle",
+                      "width": 40,
+                      "height": 40,
+                      "fill": "$navy",
+                      "cornerRadius": 20,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "a2oBp",
+                          "layoutPosition": "absolute",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Number",
+                          "fill": "$white",
+                          "textGrowth": "fixed-width-height",
+                          "width": 40,
+                          "height": 40,
+                          "content": "5",
+                          "textAlign": "center",
+                          "textAlignVertical": "middle",
+                          "fontFamily": "Source Sans 3",
+                          "fontSize": 16,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "icon",
+                      "id": "WwDoY",
+                      "name": "Step Icon",
+                      "width": 40,
+                      "height": 40,
+                      "icon": "users",
+                      "library": "lucide",
+                      "fill": "$navy"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ezyji",
+                      "name": "Step Title",
+                      "fill": "$navy",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Return home\nwith more",
+                      "lineHeight": 1.35,
+                      "textAlign": "center",
+                      "fontFamily": "Source Sans 3",
+                      "fontSize": 16,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "hhP0W",
+                      "name": "Step Desc",
+                      "fill": "$slate",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "New skills, new perspectives and memories that last a lifetime.",
+                      "lineHeight": 1.45,
+                      "textAlign": "center",
+                      "fontFamily": "Source Sans 3",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ewFPd",
+          "type": "ref",
+          "ref": "eyqIU",
+          "name": "Home/QuoteBand",
+          "width": "fill_container",
+          "descendants": {
+            "b4RL3": {
+              "content": "\"Football opens doors.\nTravel makes them bigger.\""
+            },
+            "TfXqp": {
+              "content": "— ESP"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "sY57X",
+          "name": "Home/TravelYourWay",
+          "width": "fill_container",
+          "fill": "$white",
+          "layout": "vertical",
+          "gap": 40,
+          "padding": [
+            96,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "XvFmc",
+              "name": "H2",
+              "fill": "$navy",
+              "textGrowth": "fixed-width",
+              "width": 900,
+              "content": "COME WITH YOUR TEAM.\nYOUR FAMILY. OR JUST YOUR BAG.",
+              "lineHeight": 1.08,
+              "textAlign": "center",
+              "fontFamily": "Playfair Display",
+              "fontSize": 48,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "mKD2N",
+              "name": "Subtitle",
+              "fill": "$slate",
+              "textGrowth": "fixed-width",
+              "width": 720,
+              "content": "The family experience is optional. The soccer experience is the core product.",
+              "lineHeight": 1.5,
+              "textAlign": "center",
+              "fontFamily": "Source Sans 3",
+              "fontSize": 18,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "pq8ln",
+              "name": "Travel Columns",
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "yzjmf",
+                  "name": "PLAYER ONLY",
+                  "width": 350,
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "oBC9A",
+                      "name": "Image",
+                      "width": "fill_container",
+                      "height": 220,
+                      "fill": "$stone",
+                      "cornerRadius": "$card-radius",
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "z1dllJ",
+                          "layoutPosition": "absolute",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Caption",
+                          "opacity": 0.4,
+                          "fill": "$navy",
+                          "textGrowth": "fixed-width-height",
+                          "width": 350,
+                          "height": 220,
+                          "content": "Player with ESP backpack at airport arrivals",
+                          "textAlign": "center",
+                          "textAlignVertical": "middle",
+                          "fontFamily": "Source Sans 3",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "G5E4S",
+                      "name": "Header",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "mbiqd",
+                          "name": "Title",
+                          "fill": "$navy",
+                          "content": "PLAYER ONLY",
+                          "lineHeight": 1.15,
+                          "fontFamily": "Playfair Display",
+                          "fontSize": 28,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "x4v7s7",
+                      "name": "Checklist",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "exQHh",
+                          "name": "Fly to designated airport",
+                          "width": "fill_container",
+                          "gap": 10,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "WS9Fs",
+                              "name": "Check",
+                              "fill": "$gold",
+                              "content": "✓",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "PZ3gg",
+                              "name": "Text",
+                              "fill": "$slate",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Fly to designated airport",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "rmJHg",
+                          "name": "ESP airport pickup",
+                          "width": "fill_container",
+                          "gap": 10,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "b8zpGc",
+                              "name": "Check",
+                              "fill": "$gold",
+                              "content": "✓",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "mg4Q2",
+                              "name": "Text",
+                              "fill": "$slate",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "ESP airport pickup",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "XcBlA",
+                          "name": "Supervised program",
+                          "width": "fill_container",
+                          "gap": 10,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "GnFh7",
+                              "name": "Check",
+                              "fill": "$gold",
+                              "content": "✓",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "ZhxYn",
+                              "name": "Text",
+                              "fill": "$slate",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Supervised program",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "OHcdG",
+                          "name": "Lodging, meals & transportation",
+                          "width": "fill_container",
+                          "gap": 10,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "p7Ksl",
+                              "name": "Check",
+                              "fill": "$gold",
+                              "content": "✓",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "W0qN4C",
+                              "name": "Text",
+                              "fill": "$slate",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Lodging, meals & transportation",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "c27MSb",
+                          "name": "Airport drop-off",
+                          "width": "fill_container",
+                          "gap": 10,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Y7al6A",
+                              "name": "Check",
+                              "fill": "$gold",
+                              "content": "✓",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "TlZmT",
+                              "name": "Text",
+                              "fill": "$slate",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Airport drop-off",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "rectangle",
+                  "id": "ZbRAQ",
+                  "name": "Divider 1",
+                  "fill": "$mist",
+                  "width": 1,
+                  "height": 440
+                },
+                {
+                  "type": "frame",
+                  "id": "dW57J",
+                  "name": "Spacer 1",
+                  "width": 32,
+                  "height": 1
+                },
+                {
+                  "type": "frame",
+                  "id": "qoQ5C",
+                  "name": "PLAYER + FAMILY",
+                  "width": 350,
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "zvBKo",
+                      "name": "Image",
+                      "width": "fill_container",
+                      "height": 220,
+                      "fill": "$stone",
+                      "cornerRadius": "$card-radius",
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "B2qKa",
+                          "layoutPosition": "absolute",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Caption",
+                          "opacity": 0.4,
+                          "fill": "$navy",
+                          "textGrowth": "fixed-width-height",
+                          "width": 350,
+                          "height": 220,
+                          "content": "Parents with player in a Spanish plaza",
+                          "textAlign": "center",
+                          "textAlignVertical": "middle",
+                          "fontFamily": "Source Sans 3",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Gfghk",
+                      "name": "Header",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "J35yw",
+                          "name": "Title",
+                          "fill": "$navy",
+                          "content": "PLAYER + FAMILY",
+                          "lineHeight": 1.15,
+                          "fontFamily": "Playfair Display",
+                          "fontSize": 28,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "nxTUK",
+                          "name": "Tag",
+                          "fill": "$slate",
+                          "content": "(Optional)",
+                          "fontFamily": "Source Sans 3",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "bBlE5",
+                      "name": "Checklist",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "vIs9Y",
+                          "name": "Player joins the program",
+                          "width": "fill_container",
+                          "gap": 10,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "z8wykV",
+                              "name": "Check",
+                              "fill": "$gold",
+                              "content": "✓",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Rd8vK",
+                              "name": "Text",
+                              "fill": "$slate",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Player joins the program",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "azvLj",
+                          "name": "Family enjoys companion experience",
+                          "width": "fill_container",
+                          "gap": 10,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "IViOI",
+                              "name": "Check",
+                              "fill": "$gold",
+                              "content": "✓",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "ALmaY",
+                              "name": "Text",
+                              "fill": "$slate",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Family enjoys companion experience",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "a9KQTY",
+                          "name": "Separate hotels & activities",
+                          "width": "fill_container",
+                          "gap": 10,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "o4cnj",
+                              "name": "Check",
+                              "fill": "$gold",
+                              "content": "✓",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "hhg7U",
+                              "name": "Text",
+                              "fill": "$slate",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Separate hotels & activities",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "rectangle",
+                  "id": "d0vcO",
+                  "name": "Divider 2",
+                  "fill": "$mist",
+                  "width": 1,
+                  "height": 440
+                },
+                {
+                  "type": "frame",
+                  "id": "Q2hqbu",
+                  "name": "Spacer 2",
+                  "width": 32,
+                  "height": 1
+                },
+                {
+                  "type": "frame",
+                  "id": "Kq0X2",
+                  "name": "FULL TEAM",
+                  "width": 350,
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "iBjk3",
+                      "name": "Image",
+                      "width": "fill_container",
+                      "height": 220,
+                      "fill": "$stone",
+                      "cornerRadius": "$card-radius",
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "KWyaF",
+                          "layoutPosition": "absolute",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Caption",
+                          "opacity": 0.4,
+                          "fill": "$navy",
+                          "textGrowth": "fixed-width-height",
+                          "width": 350,
+                          "height": 220,
+                          "content": "Team in navy ESP kits from behind, facing a stadium",
+                          "textAlign": "center",
+                          "textAlignVertical": "middle",
+                          "fontFamily": "Source Sans 3",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "RW8lr",
+                      "name": "Header",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "b9JWUa",
+                          "name": "Title",
+                          "fill": "$navy",
+                          "content": "FULL TEAM",
+                          "lineHeight": 1.15,
+                          "fontFamily": "Playfair Display",
+                          "fontSize": 28,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Q3CAO",
+                      "name": "Checklist",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "kn8wU",
+                          "name": "We handle all logistics",
+                          "width": "fill_container",
+                          "gap": 10,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "a7RPC",
+                              "name": "Check",
+                              "fill": "$gold",
+                              "content": "✓",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "VaanO",
+                              "name": "Text",
+                              "fill": "$slate",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "We handle all logistics",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "WfTmY",
+                          "name": "Players and coaches travel together",
+                          "width": "fill_container",
+                          "gap": 10,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "s9it0",
+                              "name": "Check",
+                              "fill": "$gold",
+                              "content": "✓",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "G9yhZ2",
+                              "name": "Text",
+                              "fill": "$slate",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Players and coaches travel together",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "O7Udu",
+                          "name": "Families can join (optional)",
+                          "width": "fill_container",
+                          "gap": 10,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "s8pYW",
+                              "name": "Check",
+                              "fill": "$gold",
+                              "content": "✓",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "YzS2L",
+                              "name": "Text",
+                              "fill": "$slate",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Families can join (optional)",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "TXhB7",
+                          "name": "Custom itineraries for your club",
+                          "width": "fill_container",
+                          "gap": 10,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "K6NjO",
+                              "name": "Check",
+                              "fill": "$gold",
+                              "content": "✓",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Cohos",
+                              "name": "Text",
+                              "fill": "$slate",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Custom itineraries for your club",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 15,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "nd8Pr",
+          "name": "Home/Language",
+          "width": "fill_container",
+          "fill": "$navy",
+          "gap": 64,
+          "padding": [
+            96,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "h3fIfn",
+              "name": "Text Side",
+              "width": 600,
+              "layout": "vertical",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "O8TUs",
+                  "name": "H2",
+                  "fill": "$white",
+                  "textGrowth": "fixed-width",
+                  "width": 600,
+                  "content": "NO SPANISH?\nNO PROBLEM.",
+                  "lineHeight": 1.08,
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 48,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "KZHhD",
+                  "name": "Gold Line",
+                  "fill": "$gold",
+                  "textGrowth": "fixed-width",
+                  "width": 560,
+                  "content": "Our programs are designed for players coming from the United States.",
+                  "lineHeight": 1.4,
+                  "fontFamily": "Source Sans 3",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "zMYU4",
+                  "name": "Body",
+                  "opacity": 0.85,
+                  "fill": "$white",
+                  "textGrowth": "fixed-width",
+                  "width": 560,
+                  "content": "Bilingual ESP staff and/or translators are available throughout the experience to help players communicate with coaches, teammates and local staff.",
+                  "lineHeight": 1.55,
+                  "fontFamily": "Source Sans 3",
+                  "fontSize": 17,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "X5M67r",
+                  "name": "Bold Close",
+                  "fill": "$white",
+                  "textGrowth": "fixed-width",
+                  "width": 560,
+                  "content": "And being immersed in a different language and culture is part of what makes the week special.",
+                  "lineHeight": 1.55,
+                  "fontFamily": "Source Sans 3",
+                  "fontSize": 17,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "frame",
+                  "id": "k1Y5N",
+                  "name": "Icons Row",
+                  "gap": 32,
+                  "children": [
+                    {
+                      "id": "G0InD",
+                      "type": "ref",
+                      "ref": "VtRvF",
+                      "name": "Bilingual staff",
+                      "descendants": {
+                        "vbq8j": {
+                          "icon": "message-circle"
+                        },
+                        "Y4UIv": {
+                          "content": "Bilingual staff"
+                        }
+                      }
+                    },
+                    {
+                      "id": "f29C0l",
+                      "type": "ref",
+                      "ref": "VtRvF",
+                      "name": "Translation support",
+                      "descendants": {
+                        "vbq8j": {
+                          "icon": "check-square"
+                        },
+                        "Y4UIv": {
+                          "content": "Translation support"
+                        }
+                      }
+                    },
+                    {
+                      "id": "t9VD6",
+                      "type": "ref",
+                      "ref": "VtRvF",
+                      "name": "Help with daily life",
+                      "descendants": {
+                        "vbq8j": {
+                          "icon": "life-buoy"
+                        },
+                        "Y4UIv": {
+                          "content": "Help with daily life"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "G4KlC",
+              "name": "Image",
+              "width": "fill_container",
+              "height": 440,
+              "fill": "$stone",
+              "cornerRadius": "$card-radius",
+              "layout": "none",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "P7K5Ls",
+                  "layoutPosition": "absolute",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Caption",
+                  "opacity": 0.4,
+                  "fill": "$white",
+                  "textGrowth": "fixed-width-height",
+                  "width": 500,
+                  "height": 440,
+                  "content": "Bilingual ESP staff member translating a Spanish coach's instruction to U.S. boy + girl players",
+                  "textAlign": "center",
+                  "textAlignVertical": "middle",
+                  "fontFamily": "Source Sans 3",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "XQM9s",
+          "name": "Home/CompanionTeaser",
+          "width": "fill_container",
+          "gap": 64,
+          "padding": [
+            96,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "I7qla",
+              "name": "Split Image",
+              "clip": true,
+              "width": 560,
+              "height": 420,
+              "cornerRadius": "$card-radius",
+              "gap": 4,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "kxqWw",
+                  "name": "Left Half",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "$stone",
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "iA8cS",
+                      "layoutPosition": "absolute",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Caption",
+                      "opacity": 0.4,
+                      "fill": "$navy",
+                      "textGrowth": "fixed-width-height",
+                      "width": 278,
+                      "height": 420,
+                      "content": "Player training",
+                      "textAlign": "center",
+                      "textAlignVertical": "middle",
+                      "fontFamily": "Source Sans 3",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "BcrJV",
+                  "name": "Right Half",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "$mist",
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "cP9Yg",
+                      "layoutPosition": "absolute",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Caption",
+                      "opacity": 0.4,
+                      "fill": "$navy",
+                      "textGrowth": "fixed-width-height",
+                      "width": 278,
+                      "height": 420,
+                      "content": "Parents exploring the city",
+                      "textAlign": "center",
+                      "textAlignVertical": "middle",
+                      "fontFamily": "Source Sans 3",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "QXllh",
+              "name": "Text Side",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "children": [
+                {
+                  "id": "Cuwvu",
+                  "type": "ref",
+                  "ref": "V7ladB",
+                  "name": "Eyebrow",
+                  "descendants": {
+                    "VHX2O": {
+                      "content": "OPTIONAL COMPANION EXPERIENCE"
+                    }
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "cCoQR",
+                  "name": "H2",
+                  "fill": "$navy",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "THEIR SOCCER\nEXPERIENCE.\nYOUR EUROPEAN\nADVENTURE.",
+                  "lineHeight": 1.08,
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 42,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "OaGFm",
+                  "name": "Body",
+                  "fill": "$slate",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Families who want to join can turn the week into a shared trip — without changing the player's core program.",
+                  "lineHeight": 1.55,
+                  "fontFamily": "Source Sans 3",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "yRLwC",
+                  "name": "Package Label",
+                  "fill": "$gold",
+                  "content": "OPTIONAL COMPANION PACKAGE",
+                  "fontFamily": "Source Sans 3",
+                  "fontSize": 13,
+                  "fontWeight": "600",
+                  "letterSpacing": 1.56
+                },
+                {
+                  "type": "frame",
+                  "id": "kGRbv",
+                  "name": "Package List",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "E116L4",
+                      "name": "Hotel accommodation",
+                      "width": "fill_container",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "WnZ5c",
+                          "name": "Bullet",
+                          "fill": "$gold",
+                          "content": "·",
+                          "fontFamily": "Source Sans 3",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "neRQh",
+                          "name": "Text",
+                          "fill": "$slate",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Hotel accommodation",
+                          "fontFamily": "Source Sans 3",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "V3hHqH",
+                      "name": "Selected local transportation",
+                      "width": "fill_container",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "B1pyN",
+                          "name": "Bullet",
+                          "fill": "$gold",
+                          "content": "·",
+                          "fontFamily": "Source Sans 3",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Y9uZsU",
+                          "name": "Text",
+                          "fill": "$slate",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Selected local transportation",
+                          "fontFamily": "Source Sans 3",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "S3tuM5",
+                      "name": "Cultural / leisure programming",
+                      "width": "fill_container",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "cXPWa",
+                          "name": "Bullet",
+                          "fill": "$gold",
+                          "content": "·",
+                          "fontFamily": "Source Sans 3",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "RL115",
+                          "name": "Text",
+                          "fill": "$slate",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Cultural / leisure programming",
+                          "fontFamily": "Source Sans 3",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "j5MNq",
+                      "name": "Selected meals",
+                      "width": "fill_container",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "z7jB2",
+                          "name": "Bullet",
+                          "fill": "$gold",
+                          "content": "·",
+                          "fontFamily": "Source Sans 3",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "GykPc",
+                          "name": "Text",
+                          "fill": "$slate",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Selected meals",
+                          "fontFamily": "Source Sans 3",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "k950PJ",
+                      "name": "Opportunities to watch training / matches when available",
+                      "width": "fill_container",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "e6Tqx",
+                          "name": "Bullet",
+                          "fill": "$gold",
+                          "content": "·",
+                          "fontFamily": "Source Sans 3",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "GqiIe",
+                          "name": "Text",
+                          "fill": "$slate",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Opportunities to watch training / matches when available",
+                          "fontFamily": "Source Sans 3",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "PGxEq",
+                      "name": "Free time to explore independently",
+                      "width": "fill_container",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "j82cX",
+                          "name": "Bullet",
+                          "fill": "$gold",
+                          "content": "·",
+                          "fontFamily": "Source Sans 3",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "niyHx",
+                          "name": "Text",
+                          "fill": "$slate",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Free time to explore independently",
+                          "fontFamily": "Source Sans 3",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "phHMh",
+                  "name": "Positioning",
+                  "fill": "$gold",
+                  "content": "Companion travel is an enhancement, not a prerequisite.",
+                  "fontFamily": "Source Sans 3",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                },
+                {
+                  "id": "Sg6gd",
+                  "type": "ref",
+                  "ref": "Rgp8o",
+                  "name": "CTA",
+                  "descendants": {
+                    "W9Mrrk": {
+                      "content": "LEARN MORE ABOUT FAMILY TRAVEL"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ZrPaq",
+          "name": "Home/TheWeek",
+          "width": "fill_container",
+          "fill": "$white",
+          "layout": "vertical",
+          "gap": 40,
+          "padding": [
+            96,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "Jws1v",
+              "type": "ref",
+              "ref": "V7ladB",
+              "name": "Eyebrow",
+              "descendants": {
+                "VHX2O": {
+                  "content": "THE EXPERIENCE"
+                }
+              }
+            },
+            {
+              "type": "text",
+              "id": "Hxm4a",
+              "name": "H2",
+              "fill": "$navy",
+              "textGrowth": "fixed-width",
+              "width": 900,
+              "content": "THE WEEK — SOCCER FIRST,\nCULTURE WOVEN IN",
+              "lineHeight": 1.08,
+              "textAlign": "center",
+              "fontFamily": "Playfair Display",
+              "fontSize": 48,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "gBMHf",
+              "name": "Day Grid",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "z8Dk5",
+                  "name": "Row 1",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "id": "xjoFg",
+                      "type": "ref",
+                      "ref": "AVdVh",
+                      "name": "SUN | ARRIVE",
+                      "width": 270,
+                      "descendants": {
+                        "QlQky": {
+                          "content": "SUN | ARRIVE"
+                        },
+                        "ym2de": {
+                          "content": "Airport pickup • check-in • orientation • team dinner"
+                        }
+                      }
+                    },
+                    {
+                      "id": "acr6F",
+                      "type": "ref",
+                      "ref": "AVdVh",
+                      "name": "MON | TRAIN",
+                      "width": 270,
+                      "descendants": {
+                        "QlQky": {
+                          "content": "MON | TRAIN"
+                        },
+                        "ym2de": {
+                          "content": "Club session • city orientation"
+                        }
+                      }
+                    },
+                    {
+                      "id": "jc0rO",
+                      "type": "ref",
+                      "ref": "AVdVh",
+                      "name": "TUE | TRAIN + CULTURE",
+                      "width": 270,
+                      "descendants": {
+                        "QlQky": {
+                          "content": "TUE | TRAIN + CULTURE"
+                        },
+                        "ym2de": {
+                          "content": "Technical/tactical session • cultural activity"
+                        }
+                      }
+                    },
+                    {
+                      "id": "BfD1m",
+                      "type": "ref",
+                      "ref": "AVdVh",
+                      "name": "WED | MATCH DAY",
+                      "width": 270,
+                      "descendants": {
+                        "QlQky": {
+                          "content": "WED | MATCH DAY"
+                        },
+                        "ym2de": {
+                          "content": "Training • local opposition"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "e2Tkjx",
+                  "name": "Row 2",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "id": "ckXcE",
+                      "type": "ref",
+                      "ref": "AVdVh",
+                      "name": "THU | LIVE THE CLUB",
+                      "width": 270,
+                      "descendants": {
+                        "QlQky": {
+                          "content": "THU | LIVE THE CLUB"
+                        },
+                        "ym2de": {
+                          "content": "Club session • tactical/video • club experience"
+                        }
+                      }
+                    },
+                    {
+                      "id": "abmg4",
+                      "type": "ref",
+                      "ref": "AVdVh",
+                      "name": "FRI | COMPETE",
+                      "width": 270,
+                      "descendants": {
+                        "QlQky": {
+                          "content": "FRI | COMPETE"
+                        },
+                        "ym2de": {
+                          "content": "Match / tournament • closing experience"
+                        }
+                      }
+                    },
+                    {
+                      "id": "k4wt1",
+                      "type": "ref",
+                      "ref": "AVdVh",
+                      "name": "SAT | DISCOVER",
+                      "width": 270,
+                      "descendants": {
+                        "QlQky": {
+                          "content": "SAT | DISCOVER"
+                        },
+                        "ym2de": {
+                          "content": "Cultural / leisure day • optional family time"
+                        }
+                      }
+                    },
+                    {
+                      "id": "tS65j",
+                      "type": "ref",
+                      "ref": "AVdVh",
+                      "name": "SUN | DEPART",
+                      "width": 270,
+                      "descendants": {
+                        "QlQky": {
+                          "content": "SUN | DEPART"
+                        },
+                        "ym2de": {
+                          "content": "Airport transfer • head home"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "YRpGZ",
+          "name": "Home/FAQ",
+          "width": "fill_container",
+          "gap": 64,
+          "padding": [
+            96,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "EY06W",
+              "name": "Left Column",
+              "width": 420,
+              "layout": "vertical",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "F3fPaS",
+                  "name": "H2",
+                  "fill": "$navy",
+                  "textGrowth": "fixed-width",
+                  "width": 420,
+                  "content": "PARENTS,\nWE'VE GOT THIS.",
+                  "lineHeight": 1.08,
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 48,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "Q4Y0ol",
+                  "name": "Subtitle",
+                  "fill": "$slate",
+                  "textGrowth": "fixed-width",
+                  "width": 380,
+                  "content": "Answer the major objections before the parent has to search for them.",
+                  "lineHeight": 1.5,
+                  "fontFamily": "Source Sans 3",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "id": "uHezT",
+                  "type": "ref",
+                  "ref": "Rgp8o",
+                  "name": "FAQ CTA",
+                  "descendants": {
+                    "W9Mrrk": {
+                      "content": "READ THE FULL FAQ"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "h6P2L",
+              "name": "Right Column",
+              "width": "fill_container",
+              "layout": "vertical",
+              "children": [
+                {
+                  "id": "ijcSI",
+                  "type": "ref",
+                  "ref": "t6VWL3",
+                  "name": "FAQ 1",
+                  "width": "fill_container",
+                  "descendants": {
+                    "INBph": {
+                      "content": "Can my child travel without us?"
+                    }
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "Er8Wa",
+                  "name": "Answer 1",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "padding": [
+                    0,
+                    0,
+                    16,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "idG9v",
+                      "name": "Answer Text",
+                      "fill": "$slate",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Yes. We meet players at the designated local airport and supervise the program through departure.",
+                      "lineHeight": 1.55,
+                      "fontFamily": "Source Sans 3",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "id": "aIQsC",
+                  "type": "ref",
+                  "ref": "t6VWL3",
+                  "name": "FAQ 2",
+                  "width": "fill_container",
+                  "descendants": {
+                    "INBph": {
+                      "content": "Does my child need to speak Spanish?"
+                    }
+                  }
+                },
+                {
+                  "id": "s6iRL",
+                  "type": "ref",
+                  "ref": "t6VWL3",
+                  "name": "FAQ 3",
+                  "width": "fill_container",
+                  "descendants": {
+                    "INBph": {
+                      "content": "Is this only for elite players?"
+                    }
+                  }
+                },
+                {
+                  "id": "HjVKL",
+                  "type": "ref",
+                  "ref": "t6VWL3",
+                  "name": "FAQ 4",
+                  "width": "fill_container",
+                  "descendants": {
+                    "INBph": {
+                      "content": "Is this for girls too?"
+                    }
+                  }
+                },
+                {
+                  "id": "x96GYO",
+                  "type": "ref",
+                  "ref": "t6VWL3",
+                  "name": "FAQ 5",
+                  "width": "fill_container",
+                  "descendants": {
+                    "INBph": {
+                      "content": "Can we come too?"
+                    }
+                  }
+                },
+                {
+                  "id": "I188Lk",
+                  "type": "ref",
+                  "ref": "t6VWL3",
+                  "name": "FAQ 6",
+                  "width": "fill_container",
+                  "descendants": {
+                    "INBph": {
+                      "content": "What about safety and supervision?"
+                    }
+                  }
+                },
+                {
+                  "id": "e90Mb",
+                  "type": "ref",
+                  "ref": "t6VWL3",
+                  "name": "FAQ 7",
+                  "width": "fill_container",
+                  "descendants": {
+                    "INBph": {
+                      "content": "What's included?"
+                    }
+                  }
+                },
+                {
+                  "id": "Gko7X",
+                  "type": "ref",
+                  "ref": "t6VWL3",
+                  "name": "FAQ 8",
+                  "width": "fill_container",
+                  "descendants": {
+                    "INBph": {
+                      "content": "What if there's an emergency?"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "eWuZO",
+          "name": "Home/FinalCTA",
+          "clip": true,
+          "width": "fill_container",
+          "height": 720,
+          "fill": "$navy",
+          "layout": "none",
+          "children": [
+            {
+              "type": "rectangle",
+              "cornerRadius": 15,
+              "id": "N0YpA",
+              "layoutPosition": "absolute",
+              "x": 60,
+              "y": 40,
+              "name": "Stamp 1",
+              "opacity": 0.08,
+              "width": 120,
+              "height": 120,
+              "stroke": "$gold",
+              "strokeWidth": 1.5
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 50,
+              "id": "H5taFO",
+              "layoutPosition": "absolute",
+              "x": 1250,
+              "y": 80,
+              "name": "Stamp 2",
+              "opacity": 0.08,
+              "width": 100,
+              "height": 100,
+              "stroke": "$gold",
+              "strokeWidth": 1.5
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 12,
+              "id": "B2qHEQ",
+              "layoutPosition": "absolute",
+              "x": 200,
+              "y": 550,
+              "name": "Stamp 3",
+              "opacity": 0.08,
+              "width": 140,
+              "height": 90,
+              "stroke": "$gold",
+              "strokeWidth": 1.5
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 55,
+              "id": "Cxn2l",
+              "layoutPosition": "absolute",
+              "x": 1100,
+              "y": 520,
+              "name": "Stamp 4",
+              "opacity": 0.08,
+              "width": 110,
+              "height": 110,
+              "stroke": "$gold",
+              "strokeWidth": 1.5
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 10,
+              "id": "bLBAo",
+              "layoutPosition": "absolute",
+              "x": 950,
+              "y": 30,
+              "name": "Stamp 5",
+              "opacity": 0.08,
+              "width": 90,
+              "height": 70,
+              "stroke": "$gold",
+              "strokeWidth": 1.5
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 40,
+              "id": "XtIZZ",
+              "layoutPosition": "absolute",
+              "x": 80,
+              "y": 300,
+              "name": "Stamp 6",
+              "opacity": 0.08,
+              "width": 80,
+              "height": 80,
+              "stroke": "$gold",
+              "strokeWidth": 1.5
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 14,
+              "id": "skOeQ",
+              "layoutPosition": "absolute",
+              "x": 1300,
+              "y": 350,
+              "name": "Stamp 7",
+              "opacity": 0.08,
+              "width": 130,
+              "height": 80,
+              "stroke": "$gold",
+              "strokeWidth": 1.5
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 50,
+              "id": "h1E6I2",
+              "layoutPosition": "absolute",
+              "x": 500,
+              "y": 600,
+              "name": "Stamp 8",
+              "opacity": 0.08,
+              "width": 100,
+              "height": 100,
+              "stroke": "$gold",
+              "strokeWidth": 1.5
+            },
+            {
+              "type": "frame",
+              "id": "k4o3r4",
+              "layoutPosition": "absolute",
+              "x": 120,
+              "y": 96,
+              "name": "CTA Content",
+              "width": 640,
+              "layout": "vertical",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "sgevd",
+                  "name": "H2",
+                  "fill": "$white",
+                  "textGrowth": "fixed-width",
+                  "width": 600,
+                  "content": "YOUR FIRST STAMP\nSTARTS HERE.",
+                  "lineHeight": 1.08,
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 48,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "U9LjQb",
+                  "name": "Sub",
+                  "fill": "$gold",
+                  "content": "Join the 2027 priority list.",
+                  "fontFamily": "Source Sans 3",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "G9WhC",
+                  "name": "Form",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "sCjtM",
+                      "name": "Form Row 1",
+                      "width": "fill_container",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "m0UaEm",
+                          "name": "Parent name",
+                          "opacity": 0.3,
+                          "width": "fill_container",
+                          "cornerRadius": 6,
+                          "stroke": "$white",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "padding": [
+                            12,
+                            16
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "a1gDX",
+                              "name": "Label",
+                              "fill": "$white",
+                              "content": "Parent name",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "oXJtW",
+                          "name": "Email",
+                          "opacity": 0.3,
+                          "width": "fill_container",
+                          "cornerRadius": 6,
+                          "stroke": "$white",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "padding": [
+                            12,
+                            16
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "xkt4Y",
+                              "name": "Label",
+                              "fill": "$white",
+                              "content": "Email",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "YmIJ0",
+                      "name": "Form Row 2",
+                      "width": "fill_container",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "Kacul",
+                          "name": "Mobile",
+                          "opacity": 0.3,
+                          "width": "fill_container",
+                          "cornerRadius": 6,
+                          "stroke": "$white",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "padding": [
+                            12,
+                            16
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "lX7Oo",
+                              "name": "Label",
+                              "fill": "$white",
+                              "content": "Mobile",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Bz8FM",
+                          "name": "Player age",
+                          "opacity": 0.3,
+                          "width": "fill_container",
+                          "cornerRadius": 6,
+                          "stroke": "$white",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "padding": [
+                            12,
+                            16
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "BXUaX",
+                              "name": "Label",
+                              "fill": "$white",
+                              "content": "Player age",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "RdKLe",
+                          "name": "Gender",
+                          "opacity": 0.3,
+                          "width": "fill_container",
+                          "cornerRadius": 6,
+                          "stroke": "$white",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "padding": [
+                            12,
+                            16
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "FlMlH",
+                              "name": "Label",
+                              "fill": "$white",
+                              "content": "Gender",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "BnBlS",
+                      "name": "Form Row 3",
+                      "width": "fill_container",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "jqFHf",
+                          "name": "Home city",
+                          "opacity": 0.3,
+                          "width": "fill_container",
+                          "cornerRadius": 6,
+                          "stroke": "$white",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "padding": [
+                            12,
+                            16
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "V7aock",
+                              "name": "Label",
+                              "fill": "$white",
+                              "content": "Home city",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "fQ4GY",
+                          "name": "Current club",
+                          "opacity": 0.3,
+                          "width": "fill_container",
+                          "cornerRadius": 6,
+                          "stroke": "$white",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "padding": [
+                            12,
+                            16
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "gJo1a",
+                              "name": "Label",
+                              "fill": "$white",
+                              "content": "Current club",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "IarsM",
+                          "name": "Travel period",
+                          "opacity": 0.3,
+                          "width": "fill_container",
+                          "cornerRadius": 6,
+                          "stroke": "$white",
+                          "strokeWidth": 1,
+                          "layout": "vertical",
+                          "padding": [
+                            12,
+                            16
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "zQLne",
+                              "name": "Label",
+                              "fill": "$white",
+                              "content": "Travel period",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "hAj2g",
+                      "name": "Pill Selector",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "PgI0J",
+                          "name": "Player-only",
+                          "fill": "#FFFFFF22",
+                          "cornerRadius": [
+                            6,
+                            0,
+                            0,
+                            6
+                          ],
+                          "stroke": "$white",
+                          "strokeWidth": 1,
+                          "padding": [
+                            10,
+                            20
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "BqSMq",
+                              "name": "Label",
+                              "fill": "$white",
+                              "content": "Player-only",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 13,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "M1VO3W",
+                          "name": "Family interested",
+                          "opacity": 0.4,
+                          "stroke": "$white",
+                          "strokeWidth": 1,
+                          "padding": [
+                            10,
+                            20
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Bl5mK",
+                              "name": "Label",
+                              "fill": "$white",
+                              "content": "Family interested",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 13,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "X0Tu4E",
+                          "name": "Team",
+                          "opacity": 0.4,
+                          "cornerRadius": [
+                            0,
+                            6,
+                            6,
+                            0
+                          ],
+                          "stroke": "$white",
+                          "strokeWidth": 1,
+                          "padding": [
+                            10,
+                            20
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "T60BO",
+                              "name": "Label",
+                              "fill": "$white",
+                              "content": "Team",
+                              "fontFamily": "Source Sans 3",
+                              "fontSize": 13,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "WTeF6",
+                  "type": "ref",
+                  "ref": "yKRG5",
+                  "name": "Submit CTA",
+                  "descendants": {
+                    "zzPzv": {
+                      "content": "GET MY PASSPORT"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "w4HAp",
+              "layoutPosition": "absolute",
+              "x": 820,
+              "y": 96,
+              "name": "CTA Right",
+              "width": 480,
+              "layout": "vertical",
+              "gap": 20,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "jLBF7",
+                  "name": "Passport Image",
+                  "width": 400,
+                  "height": 500,
+                  "fill": "$stone",
+                  "cornerRadius": "$card-radius",
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "wzR1k",
+                      "layoutPosition": "absolute",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Caption",
+                      "opacity": 0.4,
+                      "fill": "$navy",
+                      "textGrowth": "fixed-width-height",
+                      "width": 400,
+                      "height": 500,
+                      "content": "Navy passport with ESP ball emblem and boarding passes",
+                      "textAlign": "center",
+                      "textAlignVertical": "middle",
+                      "fontFamily": "Source Sans 3",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "kRV5A",
+                  "name": "Script",
+                  "fill": "$gold",
+                  "content": "More than a trip. A different future.",
+                  "textAlign": "center",
+                  "fontFamily": "Caveat",
+                  "fontSize": 32,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "u4UpM",
+          "type": "ref",
+          "ref": "AVIUM",
+          "name": "Home/Footer",
+          "width": "fill_container"
+        }
+      ]
     }
   ],
   "variables": {
