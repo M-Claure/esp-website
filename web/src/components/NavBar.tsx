@@ -11,7 +11,7 @@ interface NavBarProps {
 
 const links = [
   { label: 'Experiences', href: '/experiences' },
-  { label: 'Clubs', href: '/experiences' },
+  { label: 'Clubs', href: '/clubs' },
   { label: 'Families', href: '/families' },
   { label: 'For Teams', href: '/teams' },
   { label: 'About', href: '/about' },

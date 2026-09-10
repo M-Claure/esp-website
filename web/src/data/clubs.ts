@@ -1,6 +1,7 @@
 export interface Club {
   slug: string
   name: string
+  shortName: string
   city: string
   region: string
   initials: string
@@ -23,6 +24,7 @@ export const clubs: Club[] = [
   {
     slug: "real-sociedad",
     name: "Real Sociedad",
+    shortName: "Real Sociedad",
     city: "San Sebastián",
     region: "Basque Country",
     initials: "RS",
@@ -50,6 +52,7 @@ export const clubs: Club[] = [
   {
     slug: "girona-fc",
     name: "Girona FC",
+    shortName: "Girona FC",
     city: "Girona",
     region: "Catalonia",
     initials: "GFC",
@@ -77,6 +80,7 @@ export const clubs: Club[] = [
   {
     slug: "real-oviedo",
     name: "Real Oviedo",
+    shortName: "Real Oviedo",
     city: "Oviedo",
     region: "Asturias",
     initials: "RO",
@@ -104,6 +108,7 @@ export const clubs: Club[] = [
   {
     slug: "sporting-de-gijon",
     name: "Sporting de Gijón",
+    shortName: "Sporting",
     city: "Gijón",
     region: "Asturias",
     initials: "SG",
@@ -131,6 +136,7 @@ export const clubs: Club[] = [
   {
     slug: "racing-de-santander",
     name: "Racing de Santander",
+    shortName: "Racing",
     city: "Santander",
     region: "Cantabria",
     initials: "RdS",
@@ -158,6 +164,7 @@ export const clubs: Club[] = [
   {
     slug: "deportivo-de-la-coruna",
     name: "Deportivo de La Coruña",
+    shortName: "Deportivo",
     city: "A Coruña",
     region: "Galicia",
     initials: "RC",
@@ -185,6 +192,7 @@ export const clubs: Club[] = [
   {
     slug: "levante-ud",
     name: "Levante UD",
+    shortName: "Levante UD",
     city: "Valencia",
     region: "Comunidad Valenciana",
     initials: "LUD",

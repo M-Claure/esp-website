@@ -19,7 +19,7 @@ export default function IconStat({ icon: Icon, label, variant = 'light' }: IconS
         <Icon size={28} className={isDark ? 'text-white' : 'text-white'} />
       </div>
       <span
-        className={`font-body text-[16px] font-semibold text-center w-full ${
+        className={`font-body text-[16px] font-semibold text-center w-full whitespace-pre-line ${
           isDark ? 'text-white' : 'text-navy'
         }`}
       >
