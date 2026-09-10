@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-navy: #08243A;
+  --color-gold: #DCB846;
+  --color-slate: #525E68;
+  --color-cream: #F7F5EF;
+  --color-mist: #E2E7EA;
+  --color-stone: #C6CFD3;
+
+  --font-display: "Playfair Display", serif;
+  --font-body: "Source Sans 3", sans-serif;
+  --font-script: "Caveat", cursive;
+
+  --radius-card: 20px;
+  --radius-btn: 8px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-navy);
+  background: var(--color-cream);
+  margin: 0;
+}
