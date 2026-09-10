@@ -6,6 +6,9 @@ const experienceLinks = [
   { label: 'Girona FC', href: '/experiences/girona-fc' },
   { label: 'Real Oviedo', href: '/experiences/real-oviedo' },
   { label: 'Sporting de Gijón', href: '/experiences/sporting-de-gijon' },
+  { label: 'Racing de Santander', href: '/experiences/racing-de-santander' },
+  { label: 'Deportivo de La Coruña', href: '/experiences/deportivo-de-la-coruna' },
+  { label: 'Levante UD', href: '/experiences/levante-ud' },
 ]
 const companyLinks = [
   { label: 'About', href: '/about' },
