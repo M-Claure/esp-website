@@ -21,7 +21,13 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "Euro Soccer Passport",
+  // The brand name lives here only: pages set just their own title, e.g. "Clubs" → "Clubs | Euro Soccer Passport".
+  title: {
+    default: "Euro Soccer Passport",
+    template: "%s | Euro Soccer Passport",
+  },
+  applicationName: "Euro Soccer Passport",
+  openGraph: { siteName: "Euro Soccer Passport" },
   description: "Train with the clubs. Live the culture. Experience European football.",
   robots: { index: false, follow: false },
 };

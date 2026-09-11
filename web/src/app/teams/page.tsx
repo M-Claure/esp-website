@@ -10,7 +10,7 @@ import { siteImages } from '@/data/images'
 import PartnerForm from './PartnerForm'
 
 export const metadata: Metadata = {
-  title: 'For Teams — Euro Soccer Passport',
+  title: 'For Teams',
 }
 
 const whyPartner = [

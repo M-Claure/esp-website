@@ -1,4 +1,3 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Trophy, Users, Languages, Heart, GraduationCap, Plane } from 'lucide-react'
@@ -15,10 +14,6 @@ import QuoteBand from '@/components/QuoteBand'
 import Footer from '@/components/Footer'
 import Section from '@/components/Section'
 import { siteImages, clubImages } from '@/data/images'
-
-export const metadata: Metadata = {
-  title: 'Home — Euro Soccer Passport',
-}
 
 const clubTiles = [
   { name: 'Real Sociedad', city: 'San Sebastián', initials: 'RS', slug: 'real-sociedad' },

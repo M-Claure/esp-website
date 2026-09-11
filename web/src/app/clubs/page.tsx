@@ -15,7 +15,7 @@ import { clubs, type Club } from '@/data/clubs'
 const playfairItalic = Playfair_Display({ subsets: ['latin'], style: 'italic', weight: '400' })
 
 export const metadata: Metadata = {
-  title: 'Clubs — Euro Soccer Passport',
+  title: 'Clubs',
 }
 
 const regionCount = new Set(clubs.map(c => c.region)).size

@@ -5,7 +5,7 @@ import Section from '@/components/Section'
 import ApplyForm from './ApplyForm'
 
 export const metadata: Metadata = {
-  title: 'Apply — Euro Soccer Passport',
+  title: 'Apply',
 }
 
 export default function ApplyPage() {

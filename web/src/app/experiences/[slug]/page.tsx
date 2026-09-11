@@ -24,9 +24,9 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
   const club = getClubBySlug(slug)
-  if (!club) return { title: 'Club — Euro Soccer Passport' }
+  if (!club) return { title: 'Club' }
   return {
-    title: `${club.name} Experience — ${club.city} | ESP`,
+    title: `${club.name} Experience — ${club.city}`,
   }
 }
 

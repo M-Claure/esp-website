@@ -12,7 +12,7 @@ import { clubs } from '@/data/clubs'
 import { siteImages, clubImages } from '@/data/images'
 
 export const metadata: Metadata = {
-  title: 'Experiences — Euro Soccer Passport',
+  title: 'Experiences',
 }
 
 export default function ExperiencesPage() {

@@ -7,7 +7,7 @@ import Footer from '@/components/Footer'
 import Section from '@/components/Section'
 
 export const metadata: Metadata = {
-  title: 'About — Euro Soccer Passport',
+  title: 'About',
 }
 
 export default function AboutPage() {
@@ -51,7 +51,7 @@ export default function AboutPage() {
             THE ESP APPROACH
           </h2>
           <p className="font-body text-[16px] text-slate leading-[1.6]">
-            We partner with professional clubs across Spain to create week-long soccer experiences that combine elite training, cultural immersion and personal growth. Every program is supervised by ESP staff, designed around the club&apos;s methodology, and built so families feel confident — whether they join the trip or not.
+            Euro Soccer Passport (ESP) partners with professional clubs across Spain to create week-long soccer experiences that combine elite training, cultural immersion and personal growth. Every program is supervised by ESP staff, designed around the club&apos;s methodology, and built so families feel confident — whether they join the trip or not.
           </p>
         </div>
       </Section>

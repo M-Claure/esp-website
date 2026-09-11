@@ -7,7 +7,7 @@ import Footer from '@/components/Footer'
 import Section from '@/components/Section'
 
 export const metadata: Metadata = {
-  title: 'FAQ — Euro Soccer Passport',
+  title: 'FAQ',
 }
 
 const faqs = [

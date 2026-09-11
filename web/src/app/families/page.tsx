@@ -12,7 +12,7 @@ import Section from '@/components/Section'
 import { siteImages } from '@/data/images'
 
 export const metadata: Metadata = {
-  title: 'Families — Euro Soccer Passport',
+  title: 'Families',
 }
 
 const parentCards = [
