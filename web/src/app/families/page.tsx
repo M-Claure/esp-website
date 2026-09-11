@@ -6,10 +6,12 @@ import Button from '@/components/Button'
 import Eyebrow from '@/components/Eyebrow'
 import InfoCard from '@/components/InfoCard'
 import TravelColumn from '@/components/TravelColumn'
+import TravelOptions from '@/components/TravelOptions'
 import FAQRow from '@/components/FAQRow'
 import Footer from '@/components/Footer'
 import Section from '@/components/Section'
 import { siteImages } from '@/data/images'
+import { playerOnly } from '@/data/travel'
 
 export const metadata: Metadata = {
   title: 'Families',
@@ -17,22 +19,23 @@ export const metadata: Metadata = {
 
 const parentCards = [
   { title: 'Supervision', desc: 'Who is with the players and how the week is managed.' },
-  { title: 'Airport arrival', desc: 'Designated local airport pickup and departure transfer for player-only travelers.' },
+  { title: 'Airport arrival', desc: 'Designated local airport pickup and departure transfer for player-only travelers (ages 13–18).' },
   { title: 'Language', desc: 'Bilingual ESP staff and/or translators; Spanish is not required.' },
   { title: 'Accommodation', desc: 'Player lodging model by club / destination.' },
   { title: 'Meals & transport', desc: 'What is included during the program.' },
   { title: 'Competitive fit', desc: 'How players are grouped and local competition is matched.' },
   { title: "Girls' participation", desc: 'Girls are fully included; programming/opposition matched appropriately.' },
-  { title: 'Companions', desc: 'Optional family packages; families can also travel independently.' },
+  { title: 'Companions', desc: 'Required for players 8–12 and optional for 13–18; families can also travel independently.' },
   { title: 'Safety', desc: 'Safeguarding, medical, insurance and emergency protocols once finalized.' },
 ]
 
 const faqs = [
-  { q: 'Can my child travel without us?', a: 'Yes. We meet players at the designated local airport and supervise the program through departure.' },
+  { q: 'Can my child travel without us?', a: 'Yes, for players ages 13–18 — we meet them at the designated local airport and supervise the program through departure. Players ages 8–12 travel with a parent or guardian.' },
+  { q: 'Does my child need a team to join?', a: 'No. Individual players join ESP groups matched by age and level, with players from across the U.S. Clubs and teams can also book the experience together.' },
   { q: 'Does my child need to speak Spanish?', a: 'No. Bilingual ESP staff and/or translators help players communicate with coaches, teammates and local staff throughout the experience.' },
   { q: 'Is this only for elite players?', a: 'No. Players should love the game and be ready for the experience. Groups and competition are matched appropriately.' },
-  { q: 'Is this for girls too?', a: 'Absolutely. ESP experiences are for boys and girls ages 12–18, with appropriate programming and competition.' },
-  { q: 'Can we come too?', a: "Yes — but you don't have to. Optional companion packages let families experience the destination around the player's soccer schedule." },
+  { q: 'Is this for girls too?', a: 'Absolutely. ESP experiences are for boys and girls ages 8–18, with appropriate programming and competition.' },
+  { q: 'Can we come too?', a: "Yes. For players 13–18 it's optional — companion packages let families experience the destination around the player's soccer schedule. Players 8–12 travel with a parent or guardian." },
 ]
 
 export default function FamiliesPage() {
@@ -74,8 +77,11 @@ export default function FamiliesPage() {
           <h2 className="font-display text-[32px] lg:text-[44px] font-bold text-navy text-center leading-[1.1] m-0">
             PLAYER-ONLY TRAVEL
           </h2>
+          <p className="font-body text-[16px] text-slate text-center leading-[1.5] -mt-4 m-0">
+            For players ages 13–18. Players 8–12 travel with a parent or guardian.
+          </p>
           <div className="w-full max-w-[380px]">
-            <TravelColumn title="PLAYER ONLY" image={siteImages.travelPlayerOnly} imageAlt="Player with ESP staff at airport" checklist={['Fly to designated airport', 'ESP airport pickup', 'Supervised program', 'Lodging, meals & transportation', 'Airport drop-off']} />
+            <TravelColumn {...playerOnly} />
           </div>
         </div>
       </Section>
@@ -83,7 +89,7 @@ export default function FamiliesPage() {
       {/* Optional Companion */}
       <Section bg="bg-white">
         <div className="flex flex-col items-center gap-8 max-w-[800px] mx-auto">
-          <Eyebrow label="OPTIONAL COMPANION PACKAGE" />
+          <Eyebrow label="COMPANION PACKAGE" />
           <h2 className="font-display text-[32px] lg:text-[44px] font-bold text-navy text-center leading-[1.1] m-0">
             YOUR EUROPEAN ADVENTURE
           </h2>
@@ -95,7 +101,7 @@ export default function FamiliesPage() {
             <li>Opportunities to watch training / matches when available</li>
             <li>Free time to explore independently</li>
           </ul>
-          <p className="font-body text-[14px] text-slate italic text-center">Companion travel is an enhancement, not a prerequisite.</p>
+          <p className="font-body text-[14px] text-slate italic text-center">Companion travel is optional for ages 13–18 and required for ages 8–12.</p>
         </div>
       </Section>
 
@@ -105,11 +111,7 @@ export default function FamiliesPage() {
           <h2 className="font-display text-[32px] lg:text-[44px] font-bold text-navy text-center leading-[1.1] m-0 whitespace-pre-line">
             {"COME WITH YOUR TEAM.\nYOUR FAMILY. OR JUST YOUR BAG."}
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full">
-            <TravelColumn title="PLAYER ONLY" image={siteImages.travelPlayerOnly} checklist={['Fly to designated airport', 'ESP airport pickup', 'Supervised program', 'Lodging, meals & transportation', 'Airport drop-off']} />
-            <TravelColumn title="PLAYER + FAMILY" image={siteImages.travelPlayerFamily} checklist={['Player joins the program', 'Family enjoys companion experience', 'Separate hotels & activities']} />
-            <TravelColumn title="FULL TEAM" image={siteImages.travelFullTeam} checklist={['We handle all logistics', 'Players and coaches travel together', 'Families can join (optional)', 'Custom itineraries for your club']} />
-          </div>
+          <TravelOptions />
         </div>
       </Section>
 

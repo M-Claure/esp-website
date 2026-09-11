@@ -3,14 +3,14 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { MapPin, Trophy, Building2, Swords, Ticket, Compass } from 'lucide-react'
 import { clubs, getClubBySlug } from '@/data/clubs'
-import { siteImages, clubImages } from '@/data/images'
+import { clubImages } from '@/data/images'
 import NavBar from '@/components/NavBar'
 import Button from '@/components/Button'
 import Eyebrow from '@/components/Eyebrow'
 import ClubCrest from '@/components/ClubCrest'
 import IconStat from '@/components/IconStat'
 import DayCard from '@/components/DayCard'
-import TravelColumn from '@/components/TravelColumn'
+import TravelOptions from '@/components/TravelOptions'
 import QuoteBand from '@/components/QuoteBand'
 import FAQRow from '@/components/FAQRow'
 import Footer from '@/components/Footer'
@@ -175,11 +175,7 @@ export default async function ClubPage({ params }: { params: Promise<{ slug: str
           <h2 className="font-display text-[32px] lg:text-[44px] font-bold text-navy text-center leading-[1.1] m-0 whitespace-pre-line">
             {"COME WITH YOUR TEAM.\nYOUR FAMILY. OR JUST YOUR BAG."}
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full">
-            <TravelColumn title="PLAYER ONLY" image={siteImages.travelPlayerOnly} checklist={['Fly to designated airport', 'ESP airport pickup', 'Supervised program', 'Lodging, meals & transportation', 'Airport drop-off']} />
-            <TravelColumn title="PLAYER + FAMILY" image={siteImages.travelPlayerFamily} checklist={['Player joins the program', 'Family enjoys companion experience', 'Separate hotels & activities']} />
-            <TravelColumn title="FULL TEAM" image={siteImages.travelFullTeam} checklist={['We handle all logistics', 'Players and coaches travel together', 'Families can join (optional)', 'Custom itineraries for your club']} />
-          </div>
+          <TravelOptions />
         </div>
       </Section>
 

@@ -11,11 +11,12 @@ export const metadata: Metadata = {
 }
 
 const faqs = [
-  { q: 'Can my child travel without us?', a: 'Yes. We meet players at the designated local airport and supervise the program through departure.' },
+  { q: 'Can my child travel without us?', a: 'Yes, for players ages 13–18 — we meet them at the designated local airport and supervise the program through departure. Players ages 8–12 travel with a parent or guardian.' },
+  { q: 'Does my child need a team to join?', a: 'No. Individual players join ESP groups matched by age and level, with players from across the U.S. Clubs and teams can also book the experience together.' },
   { q: 'Does my child need to speak Spanish?', a: 'No. Bilingual ESP staff and/or translators help players communicate with coaches, teammates and local staff throughout the experience.' },
   { q: 'Is this only for elite players?', a: 'No. Players should love the game and be ready for the experience. Groups and competition are matched appropriately.' },
-  { q: 'Is this for girls too?', a: 'Absolutely. ESP experiences are for boys and girls ages 12–18, with appropriate programming and competition.' },
-  { q: 'Can we come too?', a: "Yes — but you don't have to. Optional companion packages let families experience the destination around the player's soccer schedule." },
+  { q: 'Is this for girls too?', a: 'Absolutely. ESP experiences are for boys and girls ages 8–18, with appropriate programming and competition.' },
+  { q: 'Can we come too?', a: "Yes. For players 13–18 it's optional — companion packages let families experience the destination around the player's soccer schedule. Players 8–12 travel with a parent or guardian." },
   { q: 'What about safety and supervision?', a: null, finalize: true },
   { q: "What's included?", a: null, finalize: true },
   { q: "What if there's an emergency?", a: null, finalize: true },

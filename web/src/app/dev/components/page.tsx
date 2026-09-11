@@ -52,14 +52,14 @@ export default function ComponentPreview() {
       <Section title="IconStat">
         <div className="flex gap-8">
           <IconStat icon={Trophy} label="Professional clubs" />
-          <IconStat icon={Users} label="Ages 12–18" />
+          <IconStat icon={Users} label="Ages 8–18" />
           <IconStat icon={Globe} label="7 Spanish cities" />
         </div>
       </Section>
       <Section title="IconStat Dark" bg="bg-navy">
         <div className="flex gap-8">
           <IconStat icon={Trophy} label="Professional clubs" variant="dark" />
-          <IconStat icon={Users} label="Ages 12–18" variant="dark" />
+          <IconStat icon={Users} label="Ages 8–18" variant="dark" />
         </div>
       </Section>
       <Section title="ExperienceCard">

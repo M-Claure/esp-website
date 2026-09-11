@@ -1,19 +1,20 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Trophy, Users, Languages, Heart, GraduationCap, Plane } from 'lucide-react'
+import { Trophy, Users, User, UserPlus, Languages, Heart, GraduationCap, Plane } from 'lucide-react'
 import NavBar from '@/components/NavBar'
 import Button from '@/components/Button'
 import Eyebrow from '@/components/Eyebrow'
 import ClubTile from '@/components/ClubTile'
 import IconStat from '@/components/IconStat'
 import ExperienceCard from '@/components/ExperienceCard'
-import TravelColumn from '@/components/TravelColumn'
+import TravelOptions from '@/components/TravelOptions'
 import DayCard from '@/components/DayCard'
 import FAQRow from '@/components/FAQRow'
 import QuoteBand from '@/components/QuoteBand'
 import Footer from '@/components/Footer'
 import Section from '@/components/Section'
 import { siteImages, clubImages } from '@/data/images'
+import { AGE_RANGE } from '@/data/travel'
 
 const clubTiles = [
   { name: 'Real Sociedad', city: 'San Sebastián', initials: 'RS', slug: 'real-sociedad' },
@@ -33,6 +34,12 @@ const howItWorks = [
   { step: '05', title: 'Return home with more', desc: 'New skills, new perspectives and memories that last a lifetime.' },
 ]
 
+const audiences = [
+  { icon: User, title: 'INDIVIDUAL PLAYERS', text: 'No team needed. Each player joins an ESP group matched by age and level, alongside players from across the U.S.', cta: 'EXPLORE EXPERIENCES', href: '/experiences' },
+  { icon: Users, title: 'FULL TEAMS', text: 'U.S. clubs and teams travel together with their coaches. ESP builds the European side: club access, matches, lodging and logistics.', cta: 'BRING YOUR TEAM', href: '/teams' },
+  { icon: Heart, title: 'PARENTS', text: 'Ages 8–12 travel with a parent or guardian. Ages 13–18 can come with family or travel on their own, supervised by ESP staff from airport pickup to drop-off.', cta: 'FOR FAMILIES', href: '/families' },
+]
+
 const days = [
   { title: 'SUN | ARRIVE', details: 'Airport pickup • check-in • orientation • team dinner' },
   { title: 'MON | TRAIN', details: 'Club session • city orientation' },
@@ -45,11 +52,12 @@ const days = [
 ]
 
 const faqs = [
-  { q: 'Can my child travel without us?', a: 'Yes. We meet players at the designated local airport and supervise the program through departure.' },
+  { q: 'Can my child travel without us?', a: 'Yes, for players ages 13–18 — we meet them at the designated local airport and supervise the program through departure. Players ages 8–12 travel with a parent or guardian.' },
+  { q: 'Does my child need a team to join?', a: 'No. Individual players join ESP groups matched by age and level, with players from across the U.S. Clubs and teams can also book the experience together.' },
   { q: 'Does my child need to speak Spanish?', a: 'No. Bilingual ESP staff and/or translators help players communicate with coaches, teammates and local staff throughout the experience.' },
   { q: 'Is this only for elite players?', a: 'No. Players should love the game and be ready for the experience. Groups and competition are matched appropriately.' },
-  { q: 'Is this for girls too?', a: 'Absolutely. ESP experiences are for boys and girls ages 12–18, with appropriate programming and competition.' },
-  { q: 'Can we come too?', a: "Yes — but you don't have to. Optional companion packages let families experience the destination around the player's soccer schedule." },
+  { q: 'Is this for girls too?', a: `Absolutely. ESP experiences are for boys and girls ages ${AGE_RANGE}, with appropriate programming and competition.` },
+  { q: 'Can we come too?', a: "Yes. For players 13–18 it's optional — companion packages let families experience the destination around the player's soccer schedule. Players 8–12 travel with a parent or guardian." },
   { q: 'What about safety and supervision?', a: 'Answer being finalized — safeguarding, medical, insurance and emergency protocols.' },
   { q: "What's included?", a: 'Answer being finalized per club — lodging, meals, local transport, training, matches, cultural program.' },
   { q: "What if there's an emergency?", a: 'Answer being finalized — emergency protocols.' },
@@ -69,7 +77,7 @@ export default function Home() {
             {"TRAIN WITH THE CLUBS.\nLIVE THE CULTURE.\nEXPERIENCE EUROPEAN FOOTBALL."}
           </h1>
           <p className="font-body text-[16px] lg:text-[18px] text-white/80 mt-6 max-w-[600px] leading-[1.5]">
-            Week-long soccer experiences for boys and girls ages 12–18 with professional clubs in Spain.
+            Week-long soccer experiences for boys and girls ages {AGE_RANGE} with professional clubs in Spain — on your own or with your team.
           </p>
           <p className="font-body text-[14px] lg:text-[16px] text-white/60 mt-3 max-w-[600px] leading-[1.5]">
             Train with club coaches. Experience their methodology and facilities. Compete against local players. Discover the city and culture surrounding the club.
@@ -85,8 +93,9 @@ export default function Home() {
       <section className="w-full bg-navy py-10 lg:py-12">
         <div className="max-w-[1200px] mx-auto px-5 lg:px-10 grid grid-cols-2 lg:flex lg:justify-center gap-8 lg:gap-16">
           <IconStat icon={Trophy} label="Professional clubs" variant="dark" />
-          <IconStat icon={Users} label="Boys & girls ages 12–18" variant="dark" />
-          <IconStat icon={Plane} label="Player-only or with family" variant="dark" />
+          <IconStat icon={Users} label={`Boys & girls ages ${AGE_RANGE}`} variant="dark" />
+          <IconStat icon={UserPlus} label="Individual players or full teams" variant="dark" />
+          <IconStat icon={Plane} label="Player-only travel from age 13" variant="dark" />
           <IconStat icon={Languages} label="Bilingual staff" variant="dark" />
         </div>
       </section>
@@ -155,6 +164,40 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* Who It's For */}
+      <Section bg="bg-white">
+        <div className="flex flex-col items-center gap-10">
+          <div className="text-center flex flex-col items-center gap-4">
+            <Eyebrow label="WHO IT'S FOR" />
+            <h2 className="font-display text-[32px] lg:text-[44px] font-bold text-navy leading-[1.1] m-0 whitespace-pre-line">
+              {"ON YOUR OWN.\nOR WITH YOUR TEAM."}
+            </h2>
+            <p className="font-body text-[16px] text-slate max-w-[640px] leading-[1.5] m-0">
+              ESP is open to individual players and full teams — boys and girls ages {AGE_RANGE}.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full">
+            {audiences.map(a => (
+              <div key={a.title} className="flex flex-col gap-4 bg-cream rounded-card border border-mist p-6 lg:p-8">
+                <div className="w-12 h-12 rounded-full bg-navy flex items-center justify-center">
+                  <a.icon size={22} className="text-white" />
+                </div>
+                <h3 className="font-display text-[24px] font-bold text-navy leading-[1.15] m-0">{a.title}</h3>
+                <p className="font-body text-[15px] text-slate leading-[1.6] m-0 flex-1">{a.text}</p>
+                <Link
+                  href={a.href}
+                  className="self-start inline-flex items-center gap-2 pb-1 border-b-2 border-gold font-body text-[14px] font-bold text-navy no-underline"
+                  style={{ letterSpacing: '0.84px' }}
+                >
+                  {a.cta}
+                  <span aria-hidden>→</span>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
       {/* 5.6 Quote Band */}
       <QuoteBand quote={'"Football opens doors.\nTravel makes them bigger."'} attribution="— ESP" image={siteImages.homeQuote} />
 
@@ -166,14 +209,10 @@ export default function Home() {
               {"COME WITH YOUR TEAM.\nYOUR FAMILY. OR JUST YOUR BAG."}
             </h2>
             <p className="font-body text-[16px] text-slate max-w-[600px] leading-[1.5]">
-              The family experience is optional. The soccer experience is the core product.
+              Join on your own or bring your whole team. The soccer experience is the core product.
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full">
-            <TravelColumn title="PLAYER ONLY" image={siteImages.travelPlayerOnly} imageAlt="Player with ESP staff at airport" checklist={['Fly to designated airport', 'ESP airport pickup', 'Supervised program', 'Lodging, meals & transportation', 'Airport drop-off']} />
-            <TravelColumn title="PLAYER + FAMILY" image={siteImages.travelPlayerFamily} imageAlt="Family exploring Spanish city" checklist={['Player joins the program', 'Family enjoys companion experience', 'Separate hotels & activities']} />
-            <TravelColumn title="FULL TEAM" image={siteImages.travelFullTeam} imageAlt="Team traveling together" checklist={['We handle all logistics', 'Players and coaches travel together', 'Families can join (optional)', 'Custom itineraries for your club']} />
-          </div>
+          <TravelOptions />
         </div>
       </Section>
 
@@ -223,7 +262,7 @@ export default function Home() {
             <p className="font-body text-[16px] text-slate leading-[1.5]">
               Families who want to join can turn the week into a shared trip — without changing the player&apos;s core program.
             </p>
-            <Eyebrow label="OPTIONAL COMPANION PACKAGE" />
+            <Eyebrow label="COMPANION PACKAGE" />
             <ul className="font-body text-[15px] text-slate leading-[1.8] pl-5 m-0">
               <li>Hotel accommodation</li>
               <li>Selected local transportation</li>
@@ -232,7 +271,7 @@ export default function Home() {
               <li>Opportunities to watch training / matches when available</li>
               <li>Free time to explore independently</li>
             </ul>
-            <p className="font-body text-[14px] text-slate italic">Companion travel is an enhancement, not a prerequisite.</p>
+            <p className="font-body text-[14px] text-slate italic">Companion travel is optional for ages 13–18 and required for ages 8–12.</p>
             <Link href="/families"><Button label="LEARN MORE ABOUT FAMILY TRAVEL" variant="secondary-dark" /></Link>
           </div>
         </div>

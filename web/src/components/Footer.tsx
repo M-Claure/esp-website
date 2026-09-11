@@ -51,7 +51,7 @@ export default function Footer() {
         Club names and crests are trademarks of their respective clubs, used to describe training environments and destinations; ESP is not an official partner of any club unless stated.
       </p>
       <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center w-full gap-4">
-        <span className="font-body text-[13px] text-white/50">Spain 2027 · Boys & Girls · Ages 12–18</span>
+        <span className="font-body text-[13px] text-white/50">Spain 2027 · Boys & Girls · Ages 8–18</span>
         <span className="font-body text-[12px] text-white/40 lg:text-right lg:w-[500px]">
           © 2027 Euro Soccer Passport. All rights reserved. This is a prototype — no formal partnerships are implied.
         </span>

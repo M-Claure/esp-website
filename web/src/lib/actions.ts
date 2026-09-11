@@ -8,7 +8,7 @@ const ApplySchema = z.object({
   parentName: z.string().min(1, 'Parent name is required').max(200),
   email: z.string().email('Valid email required'),
   mobile: z.string().min(1, 'Mobile is required').max(30),
-  playerAge: z.string().min(1, 'Player age is required').max(10),
+  playerAge: z.coerce.number({ message: 'Player age is required' }).int().min(8, 'ESP is for players ages 8–18').max(18, 'ESP is for players ages 8–18'),
   gender: z.string().min(1, 'Gender is required').max(30),
   homeCity: z.string().min(1, 'Home city is required').max(100),
   currentClub: z.string().min(1, 'Current club is required').max(100),
@@ -16,6 +16,11 @@ const ApplySchema = z.object({
   interest: z.enum(['Player-only', 'Family interested', 'Team']),
   _honey: z.string().max(0, 'Bot detected'),
 })
+  // Players 8–12 travel with a parent or guardian, so player-only isn't available to them.
+  .refine(d => !(d.playerAge <= 12 && d.interest === 'Player-only'), {
+    message: 'Players ages 8–12 travel with a parent or guardian — choose Family interested or Team.',
+    path: ['interest'],
+  })
 
 const PartnerSchema = z.object({
   clubName: z.string().min(1, 'Club name is required').max(200),

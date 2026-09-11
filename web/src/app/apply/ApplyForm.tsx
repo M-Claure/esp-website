@@ -5,12 +5,21 @@ import { submitApply, type FormState } from '@/lib/actions'
 import Button from '@/components/Button'
 
 const travelOptions = ['Player-only', 'Family interested', 'Team'] as const
+const ages = Array.from({ length: 11 }, (_, i) => String(i + 8))
 
 const initial: FormState = { success: false, message: '' }
 
 export default function ApplyForm() {
   const [interest, setInterest] = useState<string>('Player-only')
+  const [age, setAge] = useState('')
   const [state, action, pending] = useActionState(submitApply, initial)
+  // Players 8–12 travel with a parent or guardian, so player-only isn't offered to them.
+  const young = age !== '' && Number(age) <= 12
+
+  function changeAge(value: string) {
+    setAge(value)
+    if (Number(value) <= 12 && interest === 'Player-only') setInterest('Family interested')
+  }
 
   if (state.success) {
     return (
@@ -30,7 +39,21 @@ export default function ApplyForm() {
       <Field label="Email" name="email" type="email" error={state.errors?.email} />
       <Field label="Mobile" name="mobile" type="tel" error={state.errors?.mobile} />
       <div className="grid grid-cols-2 gap-4">
-        <Field label="Player age" name="playerAge" error={state.errors?.playerAge} />
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor="playerAge" className="font-body text-[13px] font-semibold text-navy">Player age</label>
+          <select
+            id="playerAge"
+            name="playerAge"
+            required
+            value={age}
+            onChange={e => changeAge(e.target.value)}
+            className="font-body text-[15px] px-4 py-3 rounded-btn border border-mist bg-cream/50 text-navy outline-none focus:border-gold transition-colors"
+          >
+            <option value="" disabled>Select age</option>
+            {ages.map(a => <option key={a} value={a}>{a}</option>)}
+          </select>
+          {state.errors?.playerAge && <span className="font-body text-[12px] text-red-600">{state.errors.playerAge[0]}</span>}
+        </div>
         <Field label="Gender" name="gender" error={state.errors?.gender} />
       </div>
       <Field label="Home city" name="homeCity" error={state.errors?.homeCity} />
@@ -45,7 +68,8 @@ export default function ApplyForm() {
               key={opt}
               type="button"
               onClick={() => setInterest(opt)}
-              className={`font-body text-[14px] font-semibold px-4 py-2.5 rounded-btn border cursor-pointer transition-colors ${
+              disabled={opt === 'Player-only' && young}
+              className={`font-body text-[14px] font-semibold px-4 py-2.5 rounded-btn border cursor-pointer transition-colors disabled:opacity-40 disabled:cursor-not-allowed ${
                 interest === opt
                   ? 'bg-gold text-navy border-gold'
                   : 'bg-white text-slate border-mist'
@@ -55,6 +79,8 @@ export default function ApplyForm() {
             </button>
           ))}
         </div>
+        {young && <span className="font-body text-[12px] text-slate">Players ages 8–12 travel with a parent or guardian.</span>}
+        {state.errors?.interest && <span className="font-body text-[12px] text-red-600">{state.errors.interest[0]}</span>}
       </div>
 
       {state.message && !state.success && (

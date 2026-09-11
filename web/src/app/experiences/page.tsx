@@ -2,14 +2,14 @@ import type { Metadata } from 'next'
 import NavBar from '@/components/NavBar'
 import Eyebrow from '@/components/Eyebrow'
 import ExperienceCard from '@/components/ExperienceCard'
-import TravelColumn from '@/components/TravelColumn'
+import TravelOptions from '@/components/TravelOptions'
 import QuoteBand from '@/components/QuoteBand'
 import Button from '@/components/Button'
 import Footer from '@/components/Footer'
 import Section from '@/components/Section'
 import Link from 'next/link'
 import { clubs } from '@/data/clubs'
-import { siteImages, clubImages } from '@/data/images'
+import { clubImages } from '@/data/images'
 
 export const metadata: Metadata = {
   title: 'Experiences',
@@ -69,11 +69,7 @@ export default function ExperiencesPage() {
           <h2 className="font-display text-[32px] lg:text-[44px] font-bold text-navy text-center leading-[1.1] m-0 whitespace-pre-line">
             {"COME WITH YOUR TEAM.\nYOUR FAMILY. OR JUST YOUR BAG."}
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full">
-            <TravelColumn title="PLAYER ONLY" image={siteImages.travelPlayerOnly} checklist={['Fly to designated airport', 'ESP airport pickup', 'Supervised program', 'Lodging, meals & transportation', 'Airport drop-off']} />
-            <TravelColumn title="PLAYER + FAMILY" image={siteImages.travelPlayerFamily} checklist={['Player joins the program', 'Family enjoys companion experience', 'Separate hotels & activities']} />
-            <TravelColumn title="FULL TEAM" image={siteImages.travelFullTeam} checklist={['We handle all logistics', 'Players and coaches travel together', 'Families can join (optional)', 'Custom itineraries for your club']} />
-          </div>
+          <TravelOptions />
         </div>
       </Section>
 

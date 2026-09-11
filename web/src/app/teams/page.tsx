@@ -6,7 +6,7 @@ import IconStat from '@/components/IconStat'
 import TravelColumn from '@/components/TravelColumn'
 import Footer from '@/components/Footer'
 import Section from '@/components/Section'
-import { siteImages } from '@/data/images'
+import { fullTeam } from '@/data/travel'
 import PartnerForm from './PartnerForm'
 
 export const metadata: Metadata = {
@@ -24,7 +24,7 @@ const whyPartner = [
 
 const handles = [
   'Professional club access', 'Program design', 'Training & matches',
-  'Lodging & local transport', 'Cultural experiences', 'Optional family travel',
+  'Lodging & local transport', 'Cultural experiences', 'Family travel packages',
   'Bilingual support', 'On-the-ground operations',
 ]
 
@@ -79,8 +79,8 @@ export default function TeamsPage() {
           <h2 className="font-display text-[32px] lg:text-[44px] font-bold text-navy text-center leading-[1.1] m-0">
             FULL TEAM TRAVEL
           </h2>
-          <div className="max-w-[600px]">
-            <TravelColumn title="FULL TEAM" image={siteImages.travelFullTeam} imageAlt="Team traveling together" checklist={['We handle all logistics', 'Players and coaches travel together', 'Families can join (optional)', 'Custom itineraries for your club']} />
+          <div className="w-full max-w-[380px]">
+            <TravelColumn {...fullTeam} />
           </div>
         </div>
       </Section>
