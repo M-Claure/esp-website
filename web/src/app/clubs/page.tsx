@@ -4,7 +4,7 @@ import { Playfair_Display } from 'next/font/google'
 import { Award, Building, Swords, Ticket, ShieldCheck, Languages } from 'lucide-react'
 import NavBar from '@/components/NavBar'
 import Eyebrow from '@/components/Eyebrow'
-import MockCrest from '@/components/MockCrest'
+import ClubCrest from '@/components/ClubCrest'
 import IconStat from '@/components/IconStat'
 import Button from '@/components/Button'
 import Footer from '@/components/Footer'
@@ -47,7 +47,7 @@ export default function ClubsPage() {
           <nav aria-label="Jump to a club" className="flex flex-wrap justify-center gap-x-4 gap-y-6 lg:gap-6 pt-7 pb-3">
             {clubs.map(c => (
               <a key={c.slug} href={`#${c.slug}`} className="w-[96px] flex flex-col items-center gap-2.5 no-underline">
-                <MockCrest initials={c.initials} size={72} />
+                <ClubCrest slug={c.slug} initials={c.initials} size={72} />
                 <span className="font-body text-[13px] font-semibold text-mist text-center">{c.shortName}</span>
               </a>
             ))}
@@ -126,7 +126,7 @@ function ClubRow({ club, index }: { club: Club; index: number }) {
   return (
     <article id={club.slug} className="flex flex-col lg:flex-row gap-6 lg:gap-12 py-10 lg:py-12 border-t border-mist scroll-mt-6">
       <div className="flex lg:flex-col items-center gap-3 shrink-0">
-        <MockCrest initials={club.initials} size={72} />
+        <ClubCrest slug={club.slug} initials={club.initials} size={72} />
         <span className="font-display text-[20px] font-bold text-gold">{String(index).padStart(2, '0')}</span>
       </div>
 

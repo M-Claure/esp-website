@@ -9,6 +9,7 @@ import Footer from '@/components/Footer'
 import Section from '@/components/Section'
 import Link from 'next/link'
 import { clubs } from '@/data/clubs'
+import { siteImages, clubImages } from '@/data/images'
 
 export const metadata: Metadata = {
   title: 'Experiences — Euro Soccer Passport',
@@ -43,6 +44,7 @@ export default function ExperiencesPage() {
                 city={c.city.toUpperCase()}
                 description={c.clubDescription[0].slice(0, 120) + '...'}
                 slug={c.slug}
+                image={clubImages[c.slug].hero}
               />
             ))}
           </div>
@@ -54,6 +56,7 @@ export default function ExperiencesPage() {
                 city={c.city.toUpperCase()}
                 description={c.clubDescription[0].slice(0, 120) + '...'}
                 slug={c.slug}
+                image={clubImages[c.slug].hero}
               />
             ))}
           </div>
@@ -66,10 +69,10 @@ export default function ExperiencesPage() {
           <h2 className="font-display text-[32px] lg:text-[44px] font-bold text-navy text-center leading-[1.1] m-0 whitespace-pre-line">
             {"COME WITH YOUR TEAM.\nYOUR FAMILY. OR JUST YOUR BAG."}
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <TravelColumn title="PLAYER ONLY" checklist={['Fly to designated airport', 'ESP airport pickup', 'Supervised program', 'Lodging, meals & transportation', 'Airport drop-off']} />
-            <TravelColumn title="PLAYER + FAMILY" checklist={['Player joins the program', 'Family enjoys companion experience', 'Separate hotels & activities']} />
-            <TravelColumn title="FULL TEAM" checklist={['We handle all logistics', 'Players and coaches travel together', 'Families can join (optional)', 'Custom itineraries for your club']} />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full">
+            <TravelColumn title="PLAYER ONLY" image={siteImages.travelPlayerOnly} checklist={['Fly to designated airport', 'ESP airport pickup', 'Supervised program', 'Lodging, meals & transportation', 'Airport drop-off']} />
+            <TravelColumn title="PLAYER + FAMILY" image={siteImages.travelPlayerFamily} checklist={['Player joins the program', 'Family enjoys companion experience', 'Separate hotels & activities']} />
+            <TravelColumn title="FULL TEAM" image={siteImages.travelFullTeam} checklist={['We handle all logistics', 'Players and coaches travel together', 'Families can join (optional)', 'Custom itineraries for your club']} />
           </div>
         </div>
       </Section>

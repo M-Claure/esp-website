@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Trophy, Users, Languages, Heart, GraduationCap, Plane } from 'lucide-react'
 import NavBar from '@/components/NavBar'
 import Button from '@/components/Button'
@@ -13,19 +14,20 @@ import FAQRow from '@/components/FAQRow'
 import QuoteBand from '@/components/QuoteBand'
 import Footer from '@/components/Footer'
 import Section from '@/components/Section'
+import { siteImages, clubImages } from '@/data/images'
 
 export const metadata: Metadata = {
   title: 'Home — Euro Soccer Passport',
 }
 
 const clubTiles = [
-  { name: 'Real Sociedad', city: 'San Sebastián', initials: 'RS' },
-  { name: 'Girona FC', city: 'Girona', initials: 'GFC' },
-  { name: 'Real Oviedo', city: 'Oviedo', initials: 'RO' },
-  { name: 'Sporting de Gijón', city: 'Gijón', initials: 'SG' },
-  { name: 'Racing de Santander', city: 'Santander', initials: 'RdS' },
-  { name: 'Deportivo de La Coruña', city: 'A Coruña', initials: 'RC' },
-  { name: 'Levante UD', city: 'Valencia', initials: 'LUD' },
+  { name: 'Real Sociedad', city: 'San Sebastián', initials: 'RS', slug: 'real-sociedad' },
+  { name: 'Girona FC', city: 'Girona', initials: 'GFC', slug: 'girona-fc' },
+  { name: 'Real Oviedo', city: 'Oviedo', initials: 'RO', slug: 'real-oviedo' },
+  { name: 'Sporting de Gijón', city: 'Gijón', initials: 'SG', slug: 'sporting-de-gijon' },
+  { name: 'Racing de Santander', city: 'Santander', initials: 'RdS', slug: 'racing-de-santander' },
+  { name: 'Deportivo de La Coruña', city: 'A Coruña', initials: 'RC', slug: 'deportivo-de-la-coruna' },
+  { name: 'Levante UD', city: 'Valencia', initials: 'LUD', slug: 'levante-ud' },
 ]
 
 const howItWorks = [
@@ -65,6 +67,7 @@ export default function Home() {
 
       {/* 5.1 Hero */}
       <section className="relative w-full min-h-[600px] lg:min-h-[720px] bg-stone overflow-hidden">
+        <Image src={siteImages.homeHero} alt="Two youth players training on a pitch above a Spanish coastal town" fill placeholder="blur" loading="eager" fetchPriority="high" sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-navy/70" />
         <div className="relative z-10 flex flex-col justify-center min-h-[600px] lg:min-h-[720px] px-5 lg:px-24 py-16 lg:py-24 max-w-[1440px] mx-auto">
           <h1 className="font-display text-[40px] lg:text-[72px] font-bold text-white leading-[1.1] m-0 max-w-[800px] whitespace-pre-line">
@@ -110,12 +113,12 @@ export default function Home() {
           </p>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
             {clubTiles.slice(0, 4).map(c => (
-              <ClubTile key={c.name} clubName={c.name} city={c.city} initials={c.initials} />
+              <ClubTile key={c.name} clubName={c.name} city={c.city} initials={c.initials} slug={c.slug} />
             ))}
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {clubTiles.slice(4).map(c => (
-              <ClubTile key={c.name} clubName={c.name} city={c.city} initials={c.initials} />
+              <ClubTile key={c.name} clubName={c.name} city={c.city} initials={c.initials} slug={c.slug} />
             ))}
           </div>
           <Link href="/experiences"><Button label="EXPLORE ALL CLUB EXPERIENCES" variant="secondary-dark" /></Link>
@@ -132,9 +135,9 @@ export default function Home() {
             CLUB × CITY EXPERIENCES
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <ExperienceCard clubName="REAL SOCIEDAD" city="SAN SEBASTIÁN" description="Train in one of Spain's strongest development cultures. Then experience La Concha, the Old Town, pintxos and the Basque Country." slug="real-sociedad" />
-            <ExperienceCard clubName="GIRONA FC" city="GIRONA + BARCELONA" description="Modern professional football in Catalonia. Medieval Girona, Mediterranean life and optional Barcelona experiences." slug="girona-fc" />
-            <ExperienceCard clubName="RACING SANTANDER" city="SANTANDER" description="Historic football on Spain's north coast. Beaches, mountains and Cantabrian culture around the soccer program." slug="racing-de-santander" />
+            <ExperienceCard clubName="REAL SOCIEDAD" city="SAN SEBASTIÁN" description="Train in one of Spain's strongest development cultures. Then experience La Concha, the Old Town, pintxos and the Basque Country." slug="real-sociedad" image={clubImages['real-sociedad'].hero} />
+            <ExperienceCard clubName="GIRONA FC" city="GIRONA + BARCELONA" description="Modern professional football in Catalonia. Medieval Girona, Mediterranean life and optional Barcelona experiences." slug="girona-fc" image={clubImages['girona-fc'].hero} />
+            <ExperienceCard clubName="RACING SANTANDER" city="SANTANDER" description="Historic football on Spain's north coast. Beaches, mountains and Cantabrian culture around the soccer program." slug="racing-de-santander" image={clubImages['racing-de-santander'].hero} />
           </div>
         </div>
       </Section>
@@ -158,7 +161,7 @@ export default function Home() {
       </Section>
 
       {/* 5.6 Quote Band */}
-      <QuoteBand quote={'"Football opens doors.\nTravel makes them bigger."'} attribution="— ESP" />
+      <QuoteBand quote={'"Football opens doors.\nTravel makes them bigger."'} attribution="— ESP" image={siteImages.homeQuote} />
 
       {/* 5.7 Travel Your Way */}
       <Section bg="bg-white">
@@ -171,10 +174,10 @@ export default function Home() {
               The family experience is optional. The soccer experience is the core product.
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <TravelColumn title="PLAYER ONLY" imageCaption="Player with ESP staff at airport" checklist={['Fly to designated airport', 'ESP airport pickup', 'Supervised program', 'Lodging, meals & transportation', 'Airport drop-off']} />
-            <TravelColumn title="PLAYER + FAMILY" imageCaption="Family exploring Spanish city" checklist={['Player joins the program', 'Family enjoys companion experience', 'Separate hotels & activities']} />
-            <TravelColumn title="FULL TEAM" imageCaption="Team traveling together" checklist={['We handle all logistics', 'Players and coaches travel together', 'Families can join (optional)', 'Custom itineraries for your club']} />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full">
+            <TravelColumn title="PLAYER ONLY" image={siteImages.travelPlayerOnly} imageAlt="Player with ESP staff at airport" checklist={['Fly to designated airport', 'ESP airport pickup', 'Supervised program', 'Lodging, meals & transportation', 'Airport drop-off']} />
+            <TravelColumn title="PLAYER + FAMILY" image={siteImages.travelPlayerFamily} imageAlt="Family exploring Spanish city" checklist={['Player joins the program', 'Family enjoys companion experience', 'Separate hotels & activities']} />
+            <TravelColumn title="FULL TEAM" image={siteImages.travelFullTeam} imageAlt="Team traveling together" checklist={['We handle all logistics', 'Players and coaches travel together', 'Families can join (optional)', 'Custom itineraries for your club']} />
           </div>
         </div>
       </Section>
@@ -201,8 +204,8 @@ export default function Home() {
               <IconStat icon={Heart} label="Help with daily life" variant="dark" />
             </div>
           </div>
-          <div className="w-full lg:w-[400px] h-[300px] bg-stone/20 rounded-card flex items-center justify-center shrink-0">
-            <span className="font-body text-[13px] text-white/40">Bilingual staff translating for players</span>
+          <div className="relative w-full lg:w-[400px] h-[300px] bg-stone/20 rounded-card overflow-hidden shrink-0">
+            <Image src={siteImages.bilingualStaff} alt="An ESP staff member translating a Spanish coach's instructions for two players" fill placeholder="blur" sizes="(min-width: 1024px) 400px, 100vw" className="object-cover" />
           </div>
         </div>
       </section>
@@ -210,8 +213,13 @@ export default function Home() {
       {/* 5.9 Companion */}
       <Section>
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
-          <div className="w-full lg:w-[500px] h-[300px] bg-stone rounded-card flex items-center justify-center shrink-0">
-            <span className="font-body text-[13px] text-navy/40">Split: player training / parents exploring</span>
+          <div className="w-full lg:w-[500px] h-[300px] rounded-card overflow-hidden shrink-0 grid grid-cols-2 gap-1">
+            <div className="relative bg-stone">
+              <Image src={siteImages.companionPlayer} alt="A player training" fill placeholder="blur" sizes="(min-width: 1024px) 250px, 50vw" className="object-cover" />
+            </div>
+            <div className="relative bg-stone">
+              <Image src={siteImages.companionParents} alt="Parents exploring a Spanish old town" fill placeholder="blur" sizes="(min-width: 1024px) 250px, 50vw" className="object-cover" />
+            </div>
           </div>
           <div className="flex flex-col gap-6 flex-1">
             <h2 className="font-display text-[32px] lg:text-[44px] font-bold text-navy leading-[1.1] m-0 whitespace-pre-line">

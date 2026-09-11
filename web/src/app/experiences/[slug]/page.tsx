@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { MapPin, Trophy, Building2, Swords, Ticket, Compass } from 'lucide-react'
 import { clubs, getClubBySlug } from '@/data/clubs'
+import { siteImages, clubImages } from '@/data/images'
 import NavBar from '@/components/NavBar'
 import Button from '@/components/Button'
 import Eyebrow from '@/components/Eyebrow'
-import MockCrest from '@/components/MockCrest'
+import ClubCrest from '@/components/ClubCrest'
 import IconStat from '@/components/IconStat'
 import DayCard from '@/components/DayCard'
 import TravelColumn from '@/components/TravelColumn'
@@ -45,15 +47,17 @@ export default async function ClubPage({ params }: { params: Promise<{ slug: str
   const { slug } = await params
   const club = getClubBySlug(slug)
   if (!club) return <div>Club not found</div>
+  const images = clubImages[club.slug]
 
   return (
     <main className="flex flex-col">
       {/* Hero */}
       <section className="relative w-full min-h-[500px] lg:min-h-[600px] bg-stone overflow-hidden">
+        <Image src={images.hero} alt={`Youth players training near ${club.city}`} fill placeholder="blur" loading="eager" fetchPriority="high" sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-navy/70" />
         <div className="relative z-10 flex flex-col justify-center min-h-[500px] lg:min-h-[600px] px-5 lg:px-24 py-16 lg:py-24 max-w-[1440px] mx-auto">
           <div className="flex items-center gap-4 mb-6">
-            <MockCrest initials={club.initials} size={56} />
+            <ClubCrest slug={club.slug} initials={club.initials} size={56} />
           </div>
           <h1 className="font-display text-[36px] lg:text-[64px] font-bold text-white leading-[1.1] m-0">
             {club.name.toUpperCase()} EXPERIENCE
@@ -111,15 +115,16 @@ export default async function ClubPage({ params }: { params: Promise<{ slug: str
       <Section bg="bg-white" id="facilities">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {[
-            { label: 'TRAIN', caption: club.trainCaption },
-            { label: 'FACILITIES', caption: club.facilitiesCaption },
-            { label: 'THE CITY', caption: club.cityCaption },
+            { label: 'TRAIN', caption: club.trainCaption, image: images.train, alt: 'A coach leading a training drill' },
+            { label: 'FACILITIES', caption: club.facilitiesCaption, image: images.facilities, alt: 'Academy training pitches' },
+            { label: 'THE CITY', caption: club.cityCaption, image: images.city, alt: club.city },
           ].map(img => (
             <div key={img.label} className="flex flex-col gap-3">
-              <div className="w-full h-[220px] bg-stone rounded-card flex items-center justify-center">
-                <span className="font-body text-[13px] text-navy/40">{img.caption}</span>
+              <div className="relative w-full h-[220px] lg:h-[240px] bg-stone rounded-2xl overflow-hidden">
+                <Image src={img.image} alt={img.alt} fill placeholder="blur" sizes="(min-width: 1024px) 380px, 100vw" className="object-cover" />
               </div>
-              <span className="font-body text-[13px] font-bold text-navy" style={{ letterSpacing: '1px' }}>{img.label}</span>
+              <h3 className="font-display text-[22px] font-bold text-navy m-0">{img.label}</h3>
+              <p className="font-body text-[15px] text-slate leading-[1.5] m-0">{img.caption}</p>
             </div>
           ))}
         </div>
@@ -146,8 +151,8 @@ export default async function ClubPage({ params }: { params: Promise<{ slug: str
       {/* The Place */}
       <Section bg="bg-white" id="city">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
-          <div className="w-full lg:w-[500px] h-[320px] bg-stone rounded-card flex items-center justify-center shrink-0">
-            <span className="font-body text-[13px] text-navy/40">{club.city} city photo</span>
+          <div className="relative w-full lg:w-[500px] h-[320px] bg-stone rounded-card overflow-hidden shrink-0">
+            <Image src={images.place} alt={`Local culture in ${club.city}`} fill placeholder="blur" sizes="(min-width: 1024px) 500px, 100vw" className="object-cover" />
           </div>
           <div className="flex flex-col gap-6 flex-1">
             <Eyebrow label="THE PLACE" />
@@ -162,7 +167,7 @@ export default async function ClubPage({ params }: { params: Promise<{ slug: str
       </Section>
 
       {/* Quote Band */}
-      <QuoteBand quote={club.quote} attribution={club.quoteAttribution} />
+      <QuoteBand quote={club.quote} attribution={club.quoteAttribution} image={images.hero} />
 
       {/* Travel Options */}
       <Section id="dates">
@@ -170,10 +175,10 @@ export default async function ClubPage({ params }: { params: Promise<{ slug: str
           <h2 className="font-display text-[32px] lg:text-[44px] font-bold text-navy text-center leading-[1.1] m-0 whitespace-pre-line">
             {"COME WITH YOUR TEAM.\nYOUR FAMILY. OR JUST YOUR BAG."}
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <TravelColumn title="PLAYER ONLY" checklist={['Fly to designated airport', 'ESP airport pickup', 'Supervised program', 'Lodging, meals & transportation', 'Airport drop-off']} />
-            <TravelColumn title="PLAYER + FAMILY" checklist={['Player joins the program', 'Family enjoys companion experience', 'Separate hotels & activities']} />
-            <TravelColumn title="FULL TEAM" checklist={['We handle all logistics', 'Players and coaches travel together', 'Families can join (optional)', 'Custom itineraries for your club']} />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full">
+            <TravelColumn title="PLAYER ONLY" image={siteImages.travelPlayerOnly} checklist={['Fly to designated airport', 'ESP airport pickup', 'Supervised program', 'Lodging, meals & transportation', 'Airport drop-off']} />
+            <TravelColumn title="PLAYER + FAMILY" image={siteImages.travelPlayerFamily} checklist={['Player joins the program', 'Family enjoys companion experience', 'Separate hotels & activities']} />
+            <TravelColumn title="FULL TEAM" image={siteImages.travelFullTeam} checklist={['We handle all logistics', 'Players and coaches travel together', 'Families can join (optional)', 'Custom itineraries for your club']} />
           </div>
         </div>
       </Section>

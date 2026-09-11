@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import NavBar from '@/components/NavBar'
 import Button from '@/components/Button'
 import Eyebrow from '@/components/Eyebrow'
@@ -8,6 +9,7 @@ import TravelColumn from '@/components/TravelColumn'
 import FAQRow from '@/components/FAQRow'
 import Footer from '@/components/Footer'
 import Section from '@/components/Section'
+import { siteImages } from '@/data/images'
 
 export const metadata: Metadata = {
   title: 'Families — Euro Soccer Passport',
@@ -40,6 +42,7 @@ export default function FamiliesPage() {
 
       {/* Hero */}
       <section className="relative w-full min-h-[400px] lg:min-h-[500px] bg-stone overflow-hidden">
+        <Image src={siteImages.familiesHero} alt="A family walking along a seaside promenade in Spain" fill placeholder="blur" loading="eager" fetchPriority="high" sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-navy/60" />
         <div className="relative z-10 flex flex-col justify-center items-center min-h-[400px] lg:min-h-[500px] px-5 lg:px-24 py-16 text-center">
           <h1 className="font-display text-[36px] lg:text-[64px] font-bold text-white leading-[1.1] m-0 whitespace-pre-line">
@@ -71,8 +74,8 @@ export default function FamiliesPage() {
           <h2 className="font-display text-[32px] lg:text-[44px] font-bold text-navy text-center leading-[1.1] m-0">
             PLAYER-ONLY TRAVEL
           </h2>
-          <div className="max-w-[600px]">
-            <TravelColumn title="PLAYER ONLY" imageCaption="Player with ESP staff at airport" checklist={['Fly to designated airport', 'ESP airport pickup', 'Supervised program', 'Lodging, meals & transportation', 'Airport drop-off']} />
+          <div className="w-full max-w-[380px]">
+            <TravelColumn title="PLAYER ONLY" image={siteImages.travelPlayerOnly} imageAlt="Player with ESP staff at airport" checklist={['Fly to designated airport', 'ESP airport pickup', 'Supervised program', 'Lodging, meals & transportation', 'Airport drop-off']} />
           </div>
         </div>
       </Section>
@@ -102,10 +105,10 @@ export default function FamiliesPage() {
           <h2 className="font-display text-[32px] lg:text-[44px] font-bold text-navy text-center leading-[1.1] m-0 whitespace-pre-line">
             {"COME WITH YOUR TEAM.\nYOUR FAMILY. OR JUST YOUR BAG."}
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <TravelColumn title="PLAYER ONLY" checklist={['Fly to designated airport', 'ESP airport pickup', 'Supervised program', 'Lodging, meals & transportation', 'Airport drop-off']} />
-            <TravelColumn title="PLAYER + FAMILY" checklist={['Player joins the program', 'Family enjoys companion experience', 'Separate hotels & activities']} />
-            <TravelColumn title="FULL TEAM" checklist={['We handle all logistics', 'Players and coaches travel together', 'Families can join (optional)', 'Custom itineraries for your club']} />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full">
+            <TravelColumn title="PLAYER ONLY" image={siteImages.travelPlayerOnly} checklist={['Fly to designated airport', 'ESP airport pickup', 'Supervised program', 'Lodging, meals & transportation', 'Airport drop-off']} />
+            <TravelColumn title="PLAYER + FAMILY" image={siteImages.travelPlayerFamily} checklist={['Player joins the program', 'Family enjoys companion experience', 'Separate hotels & activities']} />
+            <TravelColumn title="FULL TEAM" image={siteImages.travelFullTeam} checklist={['We handle all logistics', 'Players and coaches travel together', 'Families can join (optional)', 'Custom itineraries for your club']} />
           </div>
         </div>
       </Section>

@@ -6,6 +6,7 @@ import IconStat from '@/components/IconStat'
 import TravelColumn from '@/components/TravelColumn'
 import Footer from '@/components/Footer'
 import Section from '@/components/Section'
+import { siteImages } from '@/data/images'
 import PartnerForm from './PartnerForm'
 
 export const metadata: Metadata = {
@@ -79,7 +80,7 @@ export default function TeamsPage() {
             FULL TEAM TRAVEL
           </h2>
           <div className="max-w-[600px]">
-            <TravelColumn title="FULL TEAM" imageCaption="Team traveling together" checklist={['We handle all logistics', 'Players and coaches travel together', 'Families can join (optional)', 'Custom itineraries for your club']} />
+            <TravelColumn title="FULL TEAM" image={siteImages.travelFullTeam} imageAlt="Team traveling together" checklist={['We handle all logistics', 'Players and coaches travel together', 'Families can join (optional)', 'Custom itineraries for your club']} />
           </div>
         </div>
       </Section>

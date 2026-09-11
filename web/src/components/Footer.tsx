@@ -48,7 +48,7 @@ export default function Footer() {
       </div>
       <div className="h-px w-full bg-white/15" />
       <p className="font-body text-[11px] text-white/30 leading-[1.5] m-0">
-        Club names are used to describe training environments and destinations; ESP is not an official partner of any club unless stated.
+        Club names and crests are trademarks of their respective clubs, used to describe training environments and destinations; ESP is not an official partner of any club unless stated.
       </p>
       <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center w-full gap-4">
         <span className="font-body text-[13px] text-white/50">Spain 2027 · Boys & Girls · Ages 12–18</span>

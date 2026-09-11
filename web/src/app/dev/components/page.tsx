@@ -11,8 +11,8 @@ import DayCard from '@/components/DayCard'
 import InfoCard from '@/components/InfoCard'
 import FAQRow from '@/components/FAQRow'
 import QuoteBand from '@/components/QuoteBand'
-import ImagePlaceholder from '@/components/ImagePlaceholder'
 import Footer from '@/components/Footer'
+import { siteImages, clubImages } from '@/data/images'
 
 function Section({ title, children, bg = 'bg-white' }: { title: string; children: React.ReactNode; bg?: string }) {
   return (
@@ -45,8 +45,8 @@ export default function ComponentPreview() {
       <Section title="NavBar — Dark"><NavBar variant="dark" /></Section>
       <Section title="ClubTile">
         <div className="flex gap-10">
-          <ClubTile clubName="Real Sociedad" city="San Sebastián" initials="RS" />
-          <ClubTile clubName="Girona FC" city="Girona" initials="GFC" />
+          <ClubTile clubName="Real Sociedad" city="San Sebastián" initials="RS" slug="real-sociedad" />
+          <ClubTile clubName="Girona FC" city="Girona" initials="GFC" slug="girona-fc" />
         </div>
       </Section>
       <Section title="IconStat">
@@ -63,10 +63,10 @@ export default function ComponentPreview() {
         </div>
       </Section>
       <Section title="ExperienceCard">
-        <ExperienceCard clubName="REAL SOCIEDAD" city="SAN SEBASTIÁN" description="Train in one of Spain's strongest development cultures." slug="real-sociedad" />
+        <ExperienceCard clubName="REAL SOCIEDAD" city="SAN SEBASTIÁN" description="Train in one of Spain's strongest development cultures." slug="real-sociedad" image={clubImages['real-sociedad'].hero} />
       </Section>
       <Section title="TravelColumn">
-        <TravelColumn title="PLAYER ONLY" checklist={['Fly to designated airport', 'ESP airport pickup', 'Supervised program', 'Lodging, meals & transportation', 'Airport drop-off']} />
+        <TravelColumn title="PLAYER ONLY" image={siteImages.travelPlayerOnly} checklist={['Fly to designated airport', 'ESP airport pickup', 'Supervised program', 'Lodging, meals & transportation', 'Airport drop-off']} />
       </Section>
       <Section title="DayCard">
         <div className="flex gap-4">
@@ -81,10 +81,7 @@ export default function ComponentPreview() {
         <FAQRow question="Can my child travel without us?" answer="Yes — our Player-Only option is designed for exactly this." />
       </Section>
       <Section title="QuoteBand">
-        <QuoteBand quote={'"Football opens doors.\nTravel makes them bigger."'} attribution="— ESP" />
-      </Section>
-      <Section title="ImagePlaceholder">
-        <ImagePlaceholder />
+        <QuoteBand quote={'"Football opens doors.\nTravel makes them bigger."'} attribution="— ESP" image={siteImages.homeQuote} />
       </Section>
       <Section title="Footer"><Footer /></Section>
     </div>
