@@ -6,8 +6,8 @@ import NavBar from '@/components/NavBar'
 import Eyebrow from '@/components/Eyebrow'
 import ClubCrest from '@/components/ClubCrest'
 import IconStat from '@/components/IconStat'
-import Button from '@/components/Button'
 import Footer from '@/components/Footer'
+import ConversionCTAs from '@/components/ConversionCTAs'
 import Section from '@/components/Section'
 import { clubs, type Club } from '@/data/clubs'
 
@@ -104,7 +104,7 @@ export default function ClubsPage() {
           <p className="font-body text-[16px] lg:text-[18px] text-mist text-center leading-[1.5] max-w-[620px] m-0">
             Tell us about your player — age, level and travel plans — and we&apos;ll help you choose the right club experience.
           </p>
-          <Link href="/apply"><Button label="GET MY PASSPORT" variant="primary" /></Link>
+          <ConversionCTAs />
           <p className="font-script text-[24px] lg:text-[28px] text-gold text-center m-0">
             Different clubs. One unforgettable country.
           </p>

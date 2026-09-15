@@ -1,14 +1,13 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import Image from 'next/image'
 import NavBar from '@/components/NavBar'
-import Button from '@/components/Button'
 import Eyebrow from '@/components/Eyebrow'
 import InfoCard from '@/components/InfoCard'
 import TravelColumn from '@/components/TravelColumn'
 import TravelOptions from '@/components/TravelOptions'
 import FAQRow from '@/components/FAQRow'
 import Footer from '@/components/Footer'
+import ConversionCTAs from '@/components/ConversionCTAs'
 import Section from '@/components/Section'
 import { siteImages } from '@/data/images'
 import { playerOnly } from '@/data/travel'
@@ -133,7 +132,7 @@ export default function FamiliesPage() {
           <h2 className="font-display text-[36px] lg:text-[52px] font-bold text-white text-center leading-[1.1] m-0">
             YOUR FIRST STAMP STARTS HERE.
           </h2>
-          <Link href="/apply"><Button label="GET MY PASSPORT" variant="primary" /></Link>
+          <ConversionCTAs />
         </div>
       </section>
 

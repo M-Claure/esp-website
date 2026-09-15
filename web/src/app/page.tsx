@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Trophy, Users, User, UserPlus, Languages, Heart, GraduationCap, Plane } from 'lucide-react'
+import { Trophy, Users, User, UserPlus, Languages, Heart, GraduationCap, Plane, Building2 } from 'lucide-react'
 import NavBar from '@/components/NavBar'
 import Button from '@/components/Button'
 import Eyebrow from '@/components/Eyebrow'
@@ -13,8 +13,10 @@ import FAQRow from '@/components/FAQRow'
 import QuoteBand from '@/components/QuoteBand'
 import Footer from '@/components/Footer'
 import Section from '@/components/Section'
+import ConversionCTAs from '@/components/ConversionCTAs'
 import { siteImages, clubImages } from '@/data/images'
 import { AGE_RANGE } from '@/data/travel'
+import { paths } from '@/data/conversion'
 
 const clubTiles = [
   { name: 'Real Sociedad', city: 'San Sebastián', initials: 'RS', slug: 'real-sociedad' },
@@ -35,9 +37,9 @@ const howItWorks = [
 ]
 
 const audiences = [
-  { icon: User, title: 'INDIVIDUAL PLAYERS', text: 'No team needed. Each player joins an ESP group matched by age and level, alongside players from across the U.S.', cta: 'EXPLORE EXPERIENCES', href: '/experiences' },
-  { icon: Users, title: 'FULL TEAMS', text: 'U.S. clubs and teams travel together with their coaches. ESP builds the European side: club access, matches, lodging and logistics.', cta: 'BRING YOUR TEAM', href: '/teams' },
-  { icon: Heart, title: 'PARENTS', text: 'Ages 8–12 travel with a parent or guardian. Ages 13–18 can come with family or travel on their own, supervised by ESP staff from airport pickup to drop-off.', cta: 'FOR FAMILIES', href: '/families' },
+  { icon: User, title: 'PLAYERS & FAMILIES', text: 'No team needed. Each player joins an ESP group matched by age and level. Ages 8–12 travel with a parent or guardian; ages 13–18 can also travel on their own.', ...paths.player },
+  { icon: Users, title: 'FULL TEAMS', text: 'Players and coaches travel together. ESP builds the European side: club access, matches, lodging and logistics.', ...paths.teamTrip },
+  { icon: Building2, title: 'U.S. CLUBS & COACHES', text: 'Offer your players international access, player development and a memorable family benefit — without building European operations.', ...paths.club },
 ]
 
 const days = [
@@ -73,18 +75,22 @@ export default function Home() {
         <Image src={siteImages.homeHero} alt="Two youth players training on a pitch above a Spanish coastal town" fill placeholder="blur" loading="eager" fetchPriority="high" sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-navy/70" />
         <div className="relative z-10 flex flex-col justify-center min-h-[600px] lg:min-h-[720px] px-5 lg:px-24 py-16 lg:py-24 max-w-[1440px] mx-auto">
+          <span className="font-body text-[13px] lg:text-[14px] font-semibold text-gold mb-5" style={{ letterSpacing: '2.4px' }}>
+            SPAIN 2027 · BOYS & GIRLS · AGES {AGE_RANGE}
+          </span>
           <h1 className="font-display text-[40px] lg:text-[72px] font-bold text-white leading-[1.1] m-0 max-w-[800px] whitespace-pre-line">
             {"TRAIN WITH THE CLUBS.\nLIVE THE CULTURE.\nEXPERIENCE EUROPEAN FOOTBALL."}
           </h1>
           <p className="font-body text-[16px] lg:text-[18px] text-white/80 mt-6 max-w-[600px] leading-[1.5]">
-            Week-long soccer experiences for boys and girls ages {AGE_RANGE} with professional clubs in Spain — on your own or with your team.
+            Week-long soccer experiences with professional clubs in Spain — on your own or with your team.
           </p>
           <p className="font-body text-[14px] lg:text-[16px] text-white/60 mt-3 max-w-[600px] leading-[1.5]">
             Train with club coaches. Experience their methodology and facilities. Compete against local players. Discover the city and culture surrounding the club.
           </p>
-          <div className="flex flex-col lg:flex-row gap-4 mt-8">
-            <Link href="/experiences"><Button label="EXPLORE 2027 EXPERIENCES" variant="primary" /></Link>
-            <Link href="/teams"><Button label="BRING YOUR TEAM" variant="secondary-light" /></Link>
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4 mt-8">
+            <Link href={paths.explore.href} className="w-full sm:w-auto"><Button label={paths.explore.label} variant="primary" className="w-full sm:w-auto justify-center" /></Link>
+            <Link href={paths.player.href} className="w-full sm:w-auto"><Button label={paths.player.label} variant="secondary-light" className="w-full sm:w-auto justify-center" /></Link>
+            <Link href={paths.team.href} className="w-full sm:w-auto"><Button label={paths.team.label} variant="secondary-light" className="w-full sm:w-auto justify-center" /></Link>
           </div>
         </div>
       </section>
@@ -173,7 +179,7 @@ export default function Home() {
               {"ON YOUR OWN.\nOR WITH YOUR TEAM."}
             </h2>
             <p className="font-body text-[16px] text-slate max-w-[640px] leading-[1.5] m-0">
-              ESP is open to individual players and full teams — boys and girls ages {AGE_RANGE}.
+              Three ways in: as an individual player, as a full team, or through your U.S. club — boys and girls ages {AGE_RANGE}.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full">
@@ -189,7 +195,7 @@ export default function Home() {
                   className="self-start inline-flex items-center gap-2 pb-1 border-b-2 border-gold font-body text-[14px] font-bold text-navy no-underline"
                   style={{ letterSpacing: '0.84px' }}
                 >
-                  {a.cta}
+                  {a.label}
                   <span aria-hidden>→</span>
                 </Link>
               </div>
@@ -314,7 +320,7 @@ export default function Home() {
             {"YOUR FIRST STAMP\nSTARTS HERE."}
           </h2>
           <p className="font-body text-[18px] text-white/70 text-center">Join the 2027 priority list.</p>
-          <Link href="/apply"><Button label="GET MY PASSPORT" variant="primary" /></Link>
+          <ConversionCTAs />
           <p className="font-script text-[28px] text-gold text-center">More than a trip. A different future.</p>
         </div>
       </section>

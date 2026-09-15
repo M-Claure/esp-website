@@ -23,6 +23,7 @@ const ApplySchema = z.object({
   })
 
 const PartnerSchema = z.object({
+  inquiryType: z.enum(['Team trip', 'Club partnership'], { message: 'Choose a team trip or a club partnership' }),
   clubName: z.string().min(1, 'Club name is required').max(200),
   contactName: z.string().min(1, 'Contact name is required').max(200),
   email: z.string().email('Valid email required'),
@@ -109,6 +110,7 @@ export async function submitPartnerInquiry(_prev: FormState, formData: FormData)
   }
 
   const raw = {
+    inquiryType: formData.get('inquiryType'),
     clubName: formData.get('clubName'),
     contactName: formData.get('contactName'),
     email: formData.get('email'),
@@ -123,6 +125,7 @@ export async function submitPartnerInquiry(_prev: FormState, formData: FormData)
   }
 
   const { _honey, ...data } = result.data
-  await submitToBackend('Partner Inquiry', data)
-  return { success: true, message: "Thanks! We'll be in touch about partnership opportunities." }
+  const isTeamTrip = data.inquiryType === 'Team trip'
+  await submitToBackend(isTeamTrip ? 'Team Trip Inquiry' : 'Club Partnership Inquiry', data)
+  return { success: true, message: isTeamTrip ? "Thanks! We'll be in touch to start planning your team's trip." : "Thanks! We'll be in touch about partnership opportunities." }
 }

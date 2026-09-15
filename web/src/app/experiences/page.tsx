@@ -4,10 +4,9 @@ import Eyebrow from '@/components/Eyebrow'
 import ExperienceCard from '@/components/ExperienceCard'
 import TravelOptions from '@/components/TravelOptions'
 import QuoteBand from '@/components/QuoteBand'
-import Button from '@/components/Button'
 import Footer from '@/components/Footer'
+import ConversionCTAs from '@/components/ConversionCTAs'
 import Section from '@/components/Section'
-import Link from 'next/link'
 import { clubs } from '@/data/clubs'
 import { clubImages } from '@/data/images'
 
@@ -79,7 +78,7 @@ export default function ExperiencesPage() {
           <h2 className="font-display text-[36px] lg:text-[52px] font-bold text-white text-center leading-[1.1] m-0">
             YOUR FIRST STAMP STARTS HERE.
           </h2>
-          <Link href="/apply"><Button label="GET MY PASSPORT" variant="primary" /></Link>
+          <ConversionCTAs />
         </div>
       </section>
 

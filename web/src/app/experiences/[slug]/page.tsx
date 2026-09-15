@@ -1,11 +1,9 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import Image from 'next/image'
 import { MapPin, Trophy, Building2, Swords, Ticket, Compass } from 'lucide-react'
 import { clubs, getClubBySlug } from '@/data/clubs'
 import { clubImages } from '@/data/images'
 import NavBar from '@/components/NavBar'
-import Button from '@/components/Button'
 import Eyebrow from '@/components/Eyebrow'
 import ClubCrest from '@/components/ClubCrest'
 import IconStat from '@/components/IconStat'
@@ -14,6 +12,7 @@ import TravelOptions from '@/components/TravelOptions'
 import QuoteBand from '@/components/QuoteBand'
 import FAQRow from '@/components/FAQRow'
 import Footer from '@/components/Footer'
+import ConversionCTAs from '@/components/ConversionCTAs'
 import Section from '@/components/Section'
 import ClubSubNav from './ClubSubNav'
 
@@ -186,7 +185,7 @@ export default async function ClubPage({ params }: { params: Promise<{ slug: str
             YOUR FIRST STAMP STARTS HERE.
           </h2>
           <p className="font-body text-[16px] text-white/70 text-center">Join the 2027 priority list.</p>
-          <Link href="/apply"><Button label={`APPLY FOR ${club.name.toUpperCase()}`} variant="primary" /></Link>
+          <ConversionCTAs playerLabel={`APPLY FOR ${club.name.toUpperCase()}`} />
           <p className="font-script text-[28px] text-gold text-center">More than a trip. A different future.</p>
         </div>
       </section>

@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import NavBar from '@/components/NavBar'
-import Button from '@/components/Button'
 import Eyebrow from '@/components/Eyebrow'
 import Footer from '@/components/Footer'
+import ConversionCTAs from '@/components/ConversionCTAs'
 import Section from '@/components/Section'
 
 export const metadata: Metadata = {
@@ -63,7 +62,7 @@ export default function AboutPage() {
             {"YOUR FIRST STAMP\nSTARTS HERE."}
           </h2>
           <p className="font-body text-[18px] text-white/70 text-center">Join the 2027 priority list.</p>
-          <Link href="/apply"><Button label="GET MY PASSPORT" variant="primary" /></Link>
+          <ConversionCTAs />
           <p className="font-script text-[28px] text-gold text-center">More than a trip. A different future.</p>
         </div>
       </section>

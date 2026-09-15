@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import Section from '@/components/Section'
+import { paths } from '@/data/conversion'
 import ApplyForm from './ApplyForm'
 
 export const metadata: Metadata = {
@@ -21,7 +23,11 @@ export default function ApplyPage() {
               {"YOUR FIRST STAMP\nSTARTS HERE."}
             </h1>
             <p className="font-body text-[16px] text-slate leading-[1.6]">
-              Join the 2027 priority list. Complete the form and we&apos;ll be in touch with next steps, available dates and pricing.
+              Players and families: join the 2027 priority list. Complete the form and we&apos;ll be in touch with next steps, available dates and pricing.
+            </p>
+            <p className="font-body text-[15px] text-slate leading-[1.6] m-0">
+              Bringing a full team or representing a U.S. club?{' '}
+              <Link href={paths.team.href} className="font-semibold text-navy underline decoration-gold decoration-2 underline-offset-4">Go to For Teams →</Link>
             </p>
             <p className="font-script text-[24px] text-gold">More than a trip. A different future.</p>
           </div>

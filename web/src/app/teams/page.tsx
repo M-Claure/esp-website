@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { Shield, Users, GraduationCap, Globe, Heart, Building2 } from 'lucide-react'
 import NavBar from '@/components/NavBar'
 import Eyebrow from '@/components/Eyebrow'
@@ -7,6 +8,8 @@ import TravelColumn from '@/components/TravelColumn'
 import Footer from '@/components/Footer'
 import Section from '@/components/Section'
 import { fullTeam } from '@/data/travel'
+import { paths } from '@/data/conversion'
+import Button from '@/components/Button'
 import PartnerForm from './PartnerForm'
 
 export const metadata: Metadata = {
@@ -42,6 +45,11 @@ export default function TeamsPage() {
           <p className="font-body text-[18px] text-gold leading-[1.5]">
             You bring the players. We build the European experience.
           </p>
+          {/* Native anchors so the form's hash listener picks up the choice */}
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mt-2">
+            <a href="#team-trip" className="w-full sm:w-auto"><Button label={paths.teamTrip.label} variant="primary" className="w-full sm:w-auto justify-center" /></a>
+            <a href="#club-partnership" className="w-full sm:w-auto"><Button label={paths.club.label} variant="secondary-light" className="w-full sm:w-auto justify-center" /></a>
+          </div>
         </div>
       </section>
 
@@ -85,16 +93,22 @@ export default function TeamsPage() {
         </div>
       </Section>
 
-      {/* CTA + Partner Form */}
-      <section className="w-full bg-navy">
+      {/* Team trip / club partnership form */}
+      <section className="relative w-full bg-navy">
+        <span id="team-trip" className="absolute top-0" aria-hidden />
+        <span id="club-partnership" className="absolute top-0" aria-hidden />
         <div className="max-w-[800px] mx-auto px-5 lg:px-10 py-16 lg:py-24 flex flex-col items-center gap-8">
-          <h2 className="font-display text-[36px] lg:text-[52px] font-bold text-white text-center leading-[1.1] m-0">
-            BECOME AN ESP PARTNER CLUB
+          <h2 className="font-display text-[36px] lg:text-[52px] font-bold text-white text-center leading-[1.1] m-0 whitespace-pre-line">
+            {"BRING YOUR TEAM.\nOR PARTNER WITH ESP."}
           </h2>
-          <p className="font-body text-[16px] text-white/70 text-center">
-            Get in touch to bring European football experiences to your players.
+          <p className="font-body text-[16px] text-white/70 text-center m-0">
+            Tell us what you&apos;re planning — a trip for one team, or ESP experiences for players across your club.
           </p>
           <PartnerForm />
+          <p className="font-body text-[15px] text-white/70 text-center m-0">
+            Individual player or family?{' '}
+            <Link href={paths.player.href} className="font-semibold text-gold underline underline-offset-4">Join the priority list →</Link>
+          </p>
         </div>
       </section>
 
