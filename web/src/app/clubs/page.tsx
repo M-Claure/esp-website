@@ -143,11 +143,11 @@ function ClubRow({ club, index }: { club: Club; index: number }) {
         <p className="font-body text-[16px] text-slate leading-[1.6] m-0">{club.clubDescription[0]}</p>
         <Link
           href={`/experiences/${club.slug}`}
-          aria-label={`Explore the ${club.name} experience`}
+          aria-label={`View the 2027 ${club.name} experience`}
           className="self-start mt-2 inline-flex items-center gap-2 pb-1 border-b-2 border-gold font-body text-[14px] font-bold text-navy no-underline"
           style={{ letterSpacing: '0.84px' }}
         >
-          EXPLORE THE EXPERIENCE
+          VIEW 2027 EXPERIENCE
           <span aria-hidden>→</span>
         </Link>
       </div>

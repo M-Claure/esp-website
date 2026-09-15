@@ -30,7 +30,7 @@ export default function ExperienceCard({
         </span>
         <p className="font-body text-[15px] text-slate leading-[1.5] m-0">{description}</p>
         <span className="font-body text-[14px] font-bold text-navy" style={{ letterSpacing: '0.84px' }}>
-          EXPLORE THE EXPERIENCE →
+          VIEW 2027 EXPERIENCE →
         </span>
       </div>
     </div>
