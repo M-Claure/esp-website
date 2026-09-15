@@ -133,10 +133,13 @@ export default async function ClubPage({ params }: { params: Promise<{ slug: str
       <Section id="competition">
         <div className="flex flex-col items-center gap-10">
           <div className="text-center flex flex-col items-center gap-3">
-            <Eyebrow label="THE WEEK" />
+            <Eyebrow label="A TYPICAL WEEK" />
             <h2 className="font-display text-[32px] lg:text-[44px] font-bold text-navy leading-[1.1] m-0">
               SOCCER FIRST, CULTURE WOVEN IN
             </h2>
+            <p className="font-body text-[16px] text-slate max-w-[640px] leading-[1.5] m-0">
+              Sample itinerary. The exact schedule will vary by professional club, destination and opposition availability.
+            </p>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 w-full">
             {days.slice(0, 4).map(d => <DayCard key={d.title} title={d.title} details={d.details} />)}
