@@ -5,13 +5,17 @@ This file is the single source of truth for copy, hierarchy and art direction. T
 
 Rule from the deck: **use the copy and hierarchy in the deck directly; use the mockups as art direction, not literal screenshots.** Where mockup copy and deck copy differ, this file marks the deck version as PRIMARY and the mockup version as ALT.
 
+**Update — deck review comments (Roque Monsalve, Sept 7, 2026), these supersede the deck copy:**
+- Ages are now **8–18**. Players **8–12 travel with a parent or guardian**; players **13–18 have all access** (player-only, player + family, full team).
+- ESP must read as clearly open to **individual players** (no team needed — they join ESP groups matched by age and level) **as well as full teams**.
+
 ---
 
 ## 1. POSITIONING
 
 **Core message (use everywhere):** TRAIN WITH THE CLUBS. LIVE THE CULTURE. EXPERIENCE EUROPEAN FOOTBALL.
 
-**Cover lines:** Professional clubs at the center. City & culture as part of the experience. Family travel optional — not required.
+**Cover lines:** Professional clubs at the center. City & culture as part of the experience. Family travel optional from age 13 — required for ages 8–12.
 
 **Thesis:** We are not selling a Spain tour. We are selling access to professional European football — with the club, the place and the culture forming one unforgettable experience.
 
@@ -21,11 +25,11 @@ Rule from the deck: **use the copy and hierarchy in the deck directly; use the m
 1. THE CLUB — the reason to go. Professional coaches, methodology, facilities and football identity.
 2. THE EXPERIENCE — what the player does. Train, compete, learn, live and travel with the group.
 3. CITY & CULTURE — what makes each week unique. Food, language, history, beaches, mountains and local football culture.
-4. OPTIONAL FAMILY — a second product, not a requirement. Families can join — or the player can travel independently.
+4. OPTIONAL FAMILY — a second product, not a requirement from age 13. Families can join — or players 13–18 can travel independently. Players 8–12 travel with a parent or guardian.
 
 **Core promise:** Train with professional clubs. Live the culture. Experience European football.
 
-**Program facts:** Spain 2027 · Boys & Girls · Ages 12–18 · Week-long experiences · Player-only, player + family, or full-team travel.
+**Program facts:** Spain 2027 · Boys & Girls · Ages 8–18 · Week-long experiences · Individual players or full teams · Player-only (ages 13–18), player + family (required for ages 8–12), or full-team travel.
 
 **Secondary taglines (script/handwritten style in mockups):**
 - "More than a trip. A different future."
@@ -34,7 +38,7 @@ Rule from the deck: **use the copy and hierarchy in the deck directly; use the m
 
 ## 2. AUDIENCES
 
-- **PLAYERS** — Boys and girls ages 12–18 who love soccer and want to experience the game differently. Not only future professionals. Programs should be matched to age and competitive level.
+- **PLAYERS** — Boys and girls ages 8–18 who love soccer and want to experience the game differently. Individual players join on their own — no team needed — and are placed in ESP groups with players from across the U.S. Not only future professionals. Programs should be matched to age and competitive level.
 - **PARENTS** — Parents who want a credible, supervised international experience — whether they travel or not. The key question is not "can our whole family afford Europe?" but "can I send my child?"
 - **U.S. CLUBS & TEAMS** — Clubs that want to offer international access, player development and a memorable family benefit without building European operations.
 
@@ -67,6 +71,12 @@ Motifs:
 
 Logo: soccer-ball mark + "ESP" wordmark, "EURO SOCCER PASSPORT" in small letter-spaced caps beneath.
 
+Name usage (confirmed Sept 2026 — matches the deck, the logo and the eurosoccerpassport.com domain):
+- Full name: **Euro Soccer Passport**. Never "European Soccer Passport".
+- Short form: **ESP**. First mention in running text: "Euro Soccer Passport (ESP)"; after that, "ESP" (e.g. "ESP staff", "ESP partner club").
+- ALL CAPS "EURO SOCCER PASSPORT" only in the logo lockup and deck headers/footers.
+- Website page titles: "Page | Euro Soccer Passport"; the home page is just "Euro Soccer Passport".
+
 ## 4. SITEMAP + NAVIGATION
 
 Top nav (mockup): [ESP logo] · Experiences · Clubs · Families · For Teams · About · [Apply Now] (gold button)
@@ -81,7 +91,13 @@ Pages:
 7. `/faq` FAQ (parent reassurance)
 8. `/apply` Priority list form (B2C) — plus a separate B2B form for clubs/coaches on `/teams`
 
-Footer: logo + tagline, nav links, contact, "Spain 2027 · Boys & Girls · Ages 12–18", legal line (see guardrails).
+Conversion paths (revised Sept 2026 — one clear way in per audience; labels live in web/src/data/conversion.ts):
+- Individual player / family → I'M A PLAYER / FAMILY → /apply (priority list)
+- Full team → BRING YOUR TEAM → /teams → form set to "A team trip"
+- U.S. club / coach → PARTNER WITH ESP → /teams → form set to "A club partnership"
+- Everyone → EXPLORE EXPERIENCES → /experiences
+
+Footer: logo + tagline, nav links, contact, "Spain 2027 · Boys & Girls · Ages 8–18", legal line (see guardrails).
 
 Recommended build order (from deck): Home → one club page → Families → Teams/Clubs → remaining club pages → FAQ + conversion flow.
 
@@ -90,15 +106,16 @@ Recommended build order (from deck): Home → one club page → Families → Tea
 ### 5.1 Hero (full-bleed image/video, dark overlay, text left)
 Image: boy + girl players in navy ESP kits at a professional Spanish club, Spanish city/coast behind them.
 - H1 (3 lines): TRAIN WITH THE CLUBS. / LIVE THE CULTURE. / EXPERIENCE EUROPEAN FOOTBALL.
-- Sub: Week-long soccer experiences for boys and girls ages 12–18 with professional clubs in Spain.
+- Sub: Week-long soccer experiences for boys and girls ages 8–18 with professional clubs in Spain — on your own or with your team.
 - Support line: Train with club coaches. Experience their methodology and facilities. Compete against local players. Discover the city and culture surrounding the club.
-- CTA primary (PRIMARY copy): EXPLORE 2027 EXPERIENCES → · (ALT mockup: EXPLORE CLUB EXPERIENCES →)
-- CTA secondary (PRIMARY copy): BRING YOUR TEAM · (ALT mockup: WATCH VIDEO ▷)
+- Eyebrow above the H1 (updated): SPAIN 2027 · BOYS & GIRLS · AGES 8–18
+- CTAs (revised — one per audience): EXPLORE EXPERIENCES → /experiences (primary) · I'M A PLAYER / FAMILY → /apply · BRING YOUR TEAM → /teams
 
-### 5.2 Trust strip (4 icon items, directly under hero — player-only travel must be visible before the FAQ)
+### 5.2 Trust strip (5 icon items, directly under hero — player-only travel must be visible before the FAQ)
 - Professional club partners
-- Boys & girls ages 12–18
-- Player-only or with family
+- Boys & girls ages 8–18
+- Individual players or full teams
+- Player-only travel from age 13
 - Bilingual staff (no Spanish required)
 
 ### 5.3 Partner clubs ("lead with the clubs")
@@ -132,18 +149,25 @@ Card = training + city image, club name, city (gold), 2 lines, CTA "EXPLORE THE 
 4. Live the experience — Train, compete, explore and immerse yourself in the club and the city.
 5. Return home with more — New skills, new perspectives and memories that last a lifetime.
 
+### 5.5b Who it's for (added after the deck review — individuals and teams)
+- Eyebrow: WHO IT'S FOR · H2: ON YOUR OWN. / OR WITH YOUR TEAM. · Sub: ESP is open to individual players and full teams — boys and girls ages 8–18.
+- PLAYERS & FAMILIES — No team needed. Each player joins an ESP group matched by age and level. Ages 8–12 travel with a parent or guardian; ages 13–18 can also travel on their own. → I'M A PLAYER / FAMILY (/apply)
+- FULL TEAMS — Players and coaches travel together. ESP builds the European side: club access, matches, lodging and logistics. → BRING YOUR TEAM (/teams#team-trip)
+- U.S. CLUBS & COACHES — Offer your players international access, player development and a memorable family benefit — without building European operations. → PARTNER WITH ESP (/teams#club-partnership)
+
 ### 5.6 Quote band (image: player looking over a Spanish city at sunset)
 "Football opens doors. Travel makes them bigger." — ESP
 
 ### 5.7 Travel your way (3 columns with photo + checklist)
 - H2: COME WITH YOUR TEAM. YOUR FAMILY. OR JUST YOUR BAG.
-- Sub: The family experience is optional. The soccer experience is the core product.
-- PLAYER ONLY: Fly to the designated local airport. · ESP staff meet the player at the airport and provide supervised transportation to the program. · Lodging, meals, local transportation, soccer and cultural programming are managed throughout the week. · Return transfer to the designated airport at departure.
+- Sub: Join on your own or bring your whole team. The soccer experience is the core product.
+- Note under the columns: Ages 8–12 travel with a parent or guardian. Ages 13–18 can also travel on their own.
+- PLAYER ONLY (Ages 13–18): No team needed — join an ESP group. · Fly to the designated local airport. · ESP staff meet the player at the airport and provide supervised transportation to the program. · Lodging, meals, local transportation, soccer and cultural programming are managed throughout the week. · Return transfer to the designated airport at departure.
   (Short checklist version: Fly to designated airport · ESP airport pickup · Supervised program · Lodging, meals & transportation · Airport drop-off)
-- PLAYER + FAMILY (Optional): The player participates in the full soccer program. · Parents / companions can choose an optional package with hotel, selected transportation, cultural experiences and opportunities to watch the player. · Family participation is never required.
+- PLAYER + FAMILY (All ages · required for 8–12): No team needed — join an ESP group. · The player participates in the full soccer program. · Parents / companions choose a package with hotel, selected transportation, cultural experiences and opportunities to watch the player. · Optional for ages 13–18; required for ages 8–12.
   (Short: Player joins the program · Family enjoys companion experience · Separate hotels & activities)
-- FULL TEAM: Players and coaches travel as a group. · ESP coordinates the European side of the experience. · Parents can join individually through optional companion packages.
-  (Short: We handle all logistics · Players and coaches travel together · Families can join (optional) · Custom itineraries for your club)
+- FULL TEAM (All ages): Players and coaches travel as a group. · ESP coordinates the European side of the experience. · Parents join individually through companion packages (required for ages 8–12).
+  (Short: We handle all logistics · Players and coaches travel together · Families can join (required for ages 8–12) · Custom itineraries for your club)
 
 ### 5.8 Language & cultural immersion (dark navy section, image right)
 - H2: NO SPANISH? / NO PROBLEM.
@@ -156,8 +180,8 @@ Card = training + city image, club name, city (gold), 2 lines, CTA "EXPLORE THE 
 ### 5.9 Optional companion experience (families teaser; split image: player training / parents exploring city)
 - H2 (PRIMARY): THEIR SOCCER EXPERIENCE. / YOUR EUROPEAN ADVENTURE. (ALT mockup: TURN A SOCCER EXPERIENCE INTO A FAMILY ADVENTURE.)
 - Body: Families who want to join can turn the week into a shared trip — without changing the player's core program.
-- Eyebrow: OPTIONAL COMPANION PACKAGE — Hotel accommodation · Selected local transportation · Cultural / leisure programming · Selected meals · Opportunities to watch training / matches when available · Free time to explore independently
-- Positioning line: Companion travel is an enhancement, not a prerequisite.
+- Eyebrow: COMPANION PACKAGE — Hotel accommodation · Selected local transportation · Cultural / leisure programming · Selected meals · Opportunities to watch training / matches when available · Free time to explore independently
+- Positioning line: Companion travel is optional for ages 13–18 and required for ages 8–12.
 - CTA: LEARN MORE ABOUT FAMILY TRAVEL →
 
 ### 5.10 The week (8 day cards) — can live on Home or on each club page
@@ -173,11 +197,12 @@ Card = training + city image, club name, city (gold), 2 lines, CTA "EXPLORE THE 
 
 ### 5.11 Parent reassurance / FAQ (accordion)
 - H2: PARENTS, WE'VE GOT THIS. (sub: Answer the major objections before the parent has to search for them.)
-1. Can my child travel without us? — Yes. We meet players at the designated local airport and supervise the program through departure.
+1. Can my child travel without us? — Yes, for players ages 13–18 — we meet them at the designated local airport and supervise the program through departure. Players ages 8–12 travel with a parent or guardian.
+1b. Does my child need a team to join? — No. Individual players join ESP groups matched by age and level, with players from across the U.S. Clubs and teams can also book the experience together.
 2. Does my child need to speak Spanish? — No. Bilingual ESP staff and/or translators help players communicate with coaches, teammates and local staff throughout the experience.
 3. Is this only for elite players? — No. Players should love the game and be ready for the experience. Groups and competition are matched appropriately.
-4. Is this for girls too? — Absolutely. ESP experiences are for boys and girls ages 12–18, with appropriate programming and competition.
-5. Can we come too? — Yes — but you don't have to. Optional companion packages let families experience the destination around the player's soccer schedule.
+4. Is this for girls too? — Absolutely. ESP experiences are for boys and girls ages 8–18, with appropriate programming and competition.
+5. Can we come too? — Yes. For players 13–18 it's optional — companion packages let families experience the destination around the player's soccer schedule. Players 8–12 travel with a parent or guardian.
 6. What about safety and supervision? — [TO FINALIZE: safeguarding, medical, insurance and emergency protocols once finalized.]
 7. What's included? — [TO FINALIZE per club: lodging, meals, local transport, training, matches, cultural program.]
 8. What if there's an emergency? — [TO FINALIZE: emergency protocols.]
@@ -185,8 +210,8 @@ Card = training + city image, club name, city (gold), 2 lines, CTA "EXPLORE THE 
 ### 5.12 Final CTA (navy panel, passport imagery, stamp texture)
 - H2: YOUR FIRST STAMP STARTS HERE.
 - Sub: Join the 2027 priority list.
-- Form fields: Parent name · Email · Mobile · Player age · Gender · Home city · Current club · Travel period · Interested in: Player-only / Family interested / Team
-- Button (PRIMARY): GET MY PASSPORT (ALT mockup: APPLY NOW →)
+- Form fields: Parent name · Email · Mobile · Player age · Gender · Home city · Current club · Travel period · Interested in: Player-only / Family interested / Team (player age is an 8–18 dropdown; Player-only is unavailable for ages 8–12)
+- Buttons (revised): I'M A PLAYER / FAMILY → /apply (primary) + BRING YOUR TEAM → /teams. The same pair closes every page; club pages use APPLY FOR [CLUB] as the player button. GET MY PASSPORT remains the priority-list form's submit button.
 - Script: More than a trip. A different future.
 - Note: separate B2B form for clubs / coaches (on /teams).
 
@@ -235,7 +260,7 @@ Image notes per club (from mockups; recreate with licensed photos at web ratios)
 1. Hero — image of parents + player looking over a Spanish city. H1 (PRIMARY): THEIR SOCCER EXPERIENCE. YOUR EUROPEAN ADVENTURE. (ALT: TURN A SOCCER EXPERIENCE INTO A FAMILY ADVENTURE.) Body: While your child trains, you can explore incredible cities, enjoy local culture, and create unforgettable memories together. Companion packages include accommodation options, cultural activities and day trips.
 2. **WHAT PARENTS NEED TO KNOW** — 9 cards (3×3):
    - Supervision — Who is with the players and how the week is managed.
-   - Airport arrival — Designated local airport pickup and departure transfer for player-only travelers.
+   - Airport arrival — Designated local airport pickup and departure transfer for player-only travelers (ages 13–18).
    - Language — Bilingual ESP staff and/or translators; Spanish is not required.
    - Accommodation — Player lodging model by club / destination.
    - Meals & transport — What is included during the program.
@@ -244,7 +269,7 @@ Image notes per club (from mockups; recreate with licensed photos at web ratios)
    - Companions — Optional family packages; families can also travel independently.
    - Safety — Safeguarding, medical, insurance and emergency protocols once finalized.
 3. Player-only travel block (repeat the 4 steps from 5.7).
-4. Optional companion package (list from 5.9) + "Companion travel is an enhancement, not a prerequisite."
+4. Optional companion package (list from 5.9) + "Companion travel is optional for ages 13–18 and required for ages 8–12."
 5. Travel your way (3 columns).
 6. FAQ accordion (5.11).
 7. CTA: Join the 2027 priority list → GET MY PASSPORT.
@@ -253,9 +278,10 @@ Image notes per club (from mockups; recreate with licensed photos at web ratios)
 
 - H1: GIVE YOUR PLAYERS / A PASSPORT TO EUROPE.
 - Gold line: You bring the players. We build the European experience.
-- What ESP handles: Professional club access • program design • training • matches • lodging • local transport • cultural experiences • optional family travel • bilingual support • on-the-ground operations
+- What ESP handles: Professional club access • program design • training • matches • lodging • local transport • cultural experiences • family travel packages • bilingual support • on-the-ground operations
 - WHY CLUBS PARTNER (6 items with icons): Differentiation · Player retention · Coach development · International exposure · Family engagement · No need to build European operations
-- FULL TEAM travel block: Players and coaches travel as a group. ESP coordinates the European side of the experience. Parents can join individually through optional companion packages.
+- FULL TEAM travel block: Players and coaches travel as a group. ESP coordinates the European side of the experience. Parents join individually through companion packages (required for ages 8–12).
+- Hero CTAs (revised): BRING YOUR TEAM → #team-trip · PARTNER WITH ESP → #club-partnership. The form starts with "I'm interested in: A team trip / A club partnership" (preselected by the link used); submit reads SEND TEAM TRIP INQUIRY or BECOME AN ESP PARTNER CLUB. Link below the form for individuals: Join the priority list → /apply.
 - CTA: BECOME AN ESP PARTNER CLUB → separate B2B form: Club name · Contact name · Role · Email · Mobile · City/State · Age groups · Approx. number of players · Preferred travel period · Message.
 
 ## 9. ABOUT PAGE
@@ -294,6 +320,6 @@ Final notes (slide 26) — What to use directly: the copy and hierarchy in this 
 2. Do NOT imply a signed partnership or formal endorsement until one exists. Public copy should say "experiences with" / "training environments of" — never "official partner" — until agreements exist. Consider a footer disclaimer for the public prototype.
 3. Recreate generated images at web-ready aspect ratios; use properly licensed photography.
 4. Validate club-specific inclusions (facilities, coaches, matches) before launch.
-5. Make player-only travel obvious: airport pickup + supervised program visible before the FAQ.
+5. Make player-only travel obvious (ages 13–18): airport pickup + supervised program visible before the FAQ. Make it equally clear that individual players can join without a team.
 6. Language reassurance (no Spanish required; bilingual staff/translators) appears in core trust messaging on Home, Families and every club page.
 7. Inclusive imagery: boys + girls, teams + individuals, players + optional companions.
