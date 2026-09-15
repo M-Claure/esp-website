@@ -1,3 +1,5 @@
+import { env } from './env'
+
 // Thin wrapper over Resend's REST API (https://resend.com/docs/api-reference/emails/send-email).
 // Kept dependency-free on purpose: one fetch, no SDK to keep in sync.
 
@@ -12,12 +14,12 @@ export type SendEmailInput = {
 }
 
 export function emailConfigured(): boolean {
-  return Boolean(process.env.RESEND_API_KEY && process.env.EMAIL_FROM)
+  return Boolean(env('RESEND_API_KEY') && env('EMAIL_FROM'))
 }
 
 /** Internal inbox(es) that get the "someone just submitted" email. Comma-separated in env. */
 export function teamInbox(): string[] {
-  return (process.env.EMAIL_TEAM_INBOX ?? '')
+  return (env('EMAIL_TEAM_INBOX') ?? '')
     .split(',')
     .map(s => s.trim())
     .filter(Boolean)
@@ -25,12 +27,12 @@ export function teamInbox(): string[] {
 
 /** Where a reply to the applicant's confirmation email goes. Falls back to the team inbox. */
 export function replyToAddress(): string | undefined {
-  return process.env.EMAIL_REPLY_TO?.trim() || teamInbox()[0]
+  return env('EMAIL_REPLY_TO') ?? teamInbox()[0]
 }
 
 export async function sendEmail(input: SendEmailInput): Promise<{ id: string }> {
-  const apiKey = process.env.RESEND_API_KEY
-  const from = process.env.EMAIL_FROM
+  const apiKey = env('RESEND_API_KEY')
+  const from = env('EMAIL_FROM')
   if (!apiKey || !from) throw new Error('Email is not configured — set RESEND_API_KEY and EMAIL_FROM')
 
   const res = await fetch('https://api.resend.com/emails', {

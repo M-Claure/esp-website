@@ -125,7 +125,8 @@ Fill in `.env.local`. It's git-ignored, so keys never end up in the repo. With e
 
 1. Vercel dashboard → the ESP project → **Settings → Environment Variables**.
 2. Add each variable. Tick **Production** and **Preview** so preview deployments also work. (If you'd rather previews not email real people, give Preview a different `EMAIL_TEAM_INBOX` and leave `RESEND_API_KEY` off for Preview.)
-3. **Save**. Vercel does not apply new variables to the deployment that's already live — go to **Deployments → ⋯ on the latest → Redeploy**.
+3. **No quotes in the dashboard.** `EMAIL_FROM="Euro Soccer Passport <…>"` is correct in `.env.local` — the file parser strips the quotes — but the dashboard stores exactly what you type, and Resend rejects a from-address wrapped in quotes. Enter `Euro Soccer Passport <hello@eurosoccerpassport.com>` bare. (The code now strips stray quotes too, but don't rely on it.)
+4. **Save**. Vercel does not apply new variables to the deployment that's already live — go to **Deployments → ⋯ on the latest → Redeploy**.
 
 Tip: after saving on Vercel you can pull the same values down with `npx vercel env pull .env.local` instead of typing them twice.
 
@@ -157,14 +158,17 @@ After the redeploy in 3.2, do the same on the live site. If anything misbehaves,
 | File | Role |
 |---|---|
 | `web/src/lib/actions.ts` | Server actions for both forms. Validates with zod, then builds one normalized `Submission` — the list of `{ label, value }` fields here **is** the column order in the sheet and the row order in both emails. |
-| `web/src/lib/deliver.ts` | Fans the submission out to the three channels with `Promise.allSettled`, so a Resend hiccup never blocks the sheet write (or vice-versa). Logs every failure. Decides what the user sees. |
-| `web/src/lib/sheets.ts` | POSTs the row to the Apps Script webhook; turns Google's replies into readable errors. |
+| `web/src/lib/deliver.ts` | Sends the two emails inline (about a second), then hands the sheet write to Next's `after()` so it runs once the response is on its way — the applicant never waits on Google. If the team email couldn't be sent, the sheet write runs inline instead so we still know the lead was captured before answering. Logs every failure. Decides what the user sees. |
+| `web/src/lib/sheets.ts` | POSTs the row to the Apps Script webhook; turns Google's replies into readable errors. A timed-out or dropped call is retried once. Each row carries a random Submission ID and the script ignores an ID it already has, so a retry can't create a duplicate. |
+| `web/src/lib/env.ts` | Reads env vars tolerantly: trims whitespace and strips one pair of surrounding quotes. |
 | `web/src/lib/email.ts` | One `fetch` to Resend's API. No SDK to keep updated. |
 | `web/src/lib/email-templates.ts` | The confirmation and team-notification emails — subject, HTML (table-based, inline styles, ESP navy/gold) and a plain-text version. Copy lives at the top of each function. |
 | `web/src/lib/submissions.ts` | The shared `Submission` type and the sheet tab names. |
-| `web/integrations/google-sheets/Code.gs` | The Apps Script. Checks the secret, picks/creates the tab, writes headers on first use, matches values to columns **by header name** (so you can reorder columns in the sheet safely), and stores everything as plain text so a value like `=SUM(...)` can never run as a formula. |
+| `web/integrations/google-sheets/Code.gs` | The Apps Script. Checks the secret, picks/creates the tab, writes headers on first use, matches values to columns **by header name** (so you can reorder columns in the sheet safely), skips a Submission ID it has already stored, and stores everything as plain text so a value like `=SUM(...)` can never run as a formula. |
 
-**What the user sees when something breaks:** if the sheet *or* the team email succeeds, the lead is somewhere you'll find it, so they get the normal success screen and the failure is only logged. If both fail, they see *We couldn't save your submission just now…* and are asked to retry.
+**What the user sees when something breaks:** if the team email goes out, the lead is in your inbox, so they get the normal success screen and the sheet is written in the background (a failure there is only logged). If the team email fails, the sheet is written before answering; if that fails too, they see *We couldn't save your submission just now…* and are asked to retry.
+
+**Timing on Vercel:** `/apply` and `/teams` set `maxDuration = 60` so the background sheet write (up to two attempts of 20 s) always has room to finish after the response.
 
 **Rate limiting:** unchanged — 5 submissions per minute per IP, per form, in memory. Enough to stop a runaway bot, not a real security boundary.
 
@@ -179,6 +183,8 @@ After the redeploy in 3.2, do the same on the live site. If anything misbehaves,
 | Log says *rejected the row: Bad secret* | `GOOGLE_SHEET_WEBHOOK_SECRET` on Vercel doesn't match the `WEBHOOK_SECRET` script property. Check for trailing spaces. |
 | Log says *Script property WEBHOOK_SECRET is not set* | Step 1.3 was skipped or saved under a different name. |
 | You edited `Code.gs` but behaviour didn't change | You need a **new version** of the deployment (see the note at the end of Part 1). |
+| Resend `422` … *Invalid `from` field* | `EMAIL_FROM` on Vercel has quotes around it or a stray space. Edit the variable so the value is bare: `Euro Soccer Passport <hello@eurosoccerpassport.com>`, then redeploy. |
+| Log says *sheet attempt 1 failed, retrying … aborted due to timeout* then *sheet ok on attempt 2* | Google was slow once; the retry handled it and there's no duplicate. Nothing to do unless it happens constantly. |
 | Resend `403` … *domain is not verified* | Wait for the DNS check to go green, or `EMAIL_FROM` uses a domain other than the one you verified. |
 | Resend `422` … *You can only send testing emails to your own email address* | Same thing — domain not verified yet. |
 | Resend `401` | Wrong or revoked `RESEND_API_KEY`, or the key was created with *Full access* restricted to a different domain. |

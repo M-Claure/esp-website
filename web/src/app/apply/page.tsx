@@ -6,6 +6,9 @@ import Section from '@/components/Section'
 import { paths } from '@/data/conversion'
 import ApplyForm from './ApplyForm'
 
+// The form's server action may wait on Google Sheets (with one retry) after the response is sent.
+export const maxDuration = 60
+
 export const metadata: Metadata = {
   title: 'Apply',
 }

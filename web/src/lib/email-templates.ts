@@ -1,3 +1,4 @@
+import { env } from './env'
 import { firstName, type Submission, type SubmissionField } from './submissions'
 
 // Branded HTML + plain-text emails. Table layout and inline styles on purpose — that's what
@@ -9,8 +10,7 @@ const SLATE = '#525E68'
 const CREAM = '#F7F5EF'
 const MIST = '#E2E7EA'
 
-// `||` not `??`: an env var saved as an empty string (easy to do in the Vercel dashboard) must still fall back.
-const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://eurosoccerpassport.com').replace(/\/+$/, '')
+const SITE_URL = (env('NEXT_PUBLIC_SITE_URL') ?? 'https://eurosoccerpassport.com').replace(/\/+$/, '')
 const TAGLINE = 'More than a trip. A different future.'
 const STRAP = 'Spain 2027 · Boys & Girls · Ages 8–18'
 
@@ -78,7 +78,7 @@ export function renderTeamNotification(s: Submission): RenderedEmail {
   const where = s.fields.find(f => f.label === 'Home city' || f.label === 'Club or team name')?.value
   const subject = `[ESP] ${s.label}: ${s.contact.name}${where ? ` — ${where}` : ''}`
   const intro = `${s.contact.name} just submitted the ${formName(s.kind)} on the website. Reply to this email to respond to them directly — replies go to ${s.contact.email}.`
-  const sheetUrl = process.env.GOOGLE_SHEET_URL
+  const sheetUrl = env('GOOGLE_SHEET_URL')
   const when = new Date(s.submittedAt).toLocaleString('en-US', { timeZone: 'America/New_York', dateStyle: 'medium', timeStyle: 'short' })
 
   return {

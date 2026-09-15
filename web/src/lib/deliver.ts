@@ -1,49 +1,71 @@
 import { appendToSheet } from './sheets'
 import { emailConfigured, replyToAddress, sendEmail, teamInbox } from './email'
 import { renderConfirmation, renderTeamNotification } from './email-templates'
+import { env } from './env'
 import type { Submission } from './submissions'
 
-// Fans a validated submission out to every channel at once:
-//   1. a row in the Google Sheet
-//   2. a "someone just submitted" email to the team inbox
-//   3. a confirmation email to the person who submitted
-// Channels are independent — one failing never blocks the others. Every failure is logged with
-// its reason (visible in `npm run dev` output locally and in Vercel → Logs in production).
+// Fans a validated submission out to every channel:
+//   1. a "someone just submitted" email to the team inbox      (inline — about a second)
+//   2. a confirmation email to the person who submitted        (inline — about a second)
+//   3. a row in the Google Sheet                               (after the response, with a retry)
+// The person never waits on Google. The team email is what makes a submission "captured"; if it
+// can't be sent, the sheet write runs inline instead so we still know before answering. Every
+// failure is logged with its reason (visible in `npm run dev` locally, Vercel → Logs in production).
 
 type Channel = 'sheet' | 'team-email' | 'confirmation-email'
-type Outcome = { channel: Channel; status: 'sent' | 'skipped' | 'failed'; detail?: string }
+type Outcome = { channel: Channel; status: 'sent' | 'skipped' | 'failed' | 'scheduled'; detail?: string }
 
 export type DeliveryReport = {
-  /** The lead exists somewhere we can find it (sheet or team inbox) — or nothing is configured yet and it was logged. */
+  /** The lead exists somewhere we can find it — or nothing is configured yet and it was logged. */
   captured: boolean
   confirmationSent: boolean
   outcomes: Outcome[]
 }
 
-export async function deliverSubmission(s: Submission): Promise<DeliveryReport> {
-  const settled = await Promise.allSettled([appendToSheet(s), sendTeamNotification(s), sendConfirmation(s)])
-  const outcomes: Outcome[] = [
-    toOutcome('sheet', settled[0]),
-    toOutcome('team-email', settled[1]),
-    toOutcome('confirmation-email', settled[2]),
-  ]
+/** Runs a task after the response is sent. In a Server Action this is `after` from 'next/server'. */
+export type Defer = (task: () => Promise<void>) => void
 
+export async function deliverSubmission(s: Submission, opts: { defer?: Defer } = {}): Promise<DeliveryReport> {
+  const [teamSettled, confirmationSettled] = await Promise.allSettled([sendTeamNotification(s), sendConfirmation(s)])
+  const team = toOutcome('team-email', teamSettled)
+  const confirmation = toOutcome('confirmation-email', confirmationSettled)
+
+  let sheet: Outcome
+  const sheetConfigured = Boolean(env('GOOGLE_SHEET_WEBHOOK_URL'))
+  if (!sheetConfigured) {
+    sheet = { channel: 'sheet', status: 'skipped' }
+  } else if (team.status === 'sent' && opts.defer) {
+    // The lead is safely in the inbox; write the row without holding up the response.
+    opts.defer(() => writeRowLater(s))
+    sheet = { channel: 'sheet', status: 'scheduled' }
+  } else {
+    sheet = toOutcome('sheet', await settle(appendToSheet(s)))
+  }
+
+  const outcomes = [sheet, team, confirmation]
   for (const o of outcomes) {
     if (o.status === 'failed') console.error(`[ESP form] ${o.channel} failed (${s.kind}, ${s.contact.email}): ${o.detail}`)
   }
 
-  const leadChannels = outcomes.filter(o => o.channel !== 'confirmation-email')
   let captured: boolean
-  if (leadChannels.every(o => o.status === 'skipped')) {
+  if (sheet.status === 'skipped' && team.status === 'skipped') {
     // Nothing that stores the lead is configured (local dev, or env vars missing in prod).
     // Log the whole submission so it isn't lost, and don't fail the user for our misconfiguration.
     console.warn(`[ESP form] No sheet or team inbox configured — logging ${s.label} instead:\n` + JSON.stringify(s, null, 2))
     captured = true
   } else {
-    captured = leadChannels.some(o => o.status === 'sent')
+    captured = team.status === 'sent' || sheet.status === 'sent'
   }
 
-  return { captured, confirmationSent: outcomes[2].status === 'sent', outcomes }
+  return { captured, confirmationSent: confirmation.status === 'sent', outcomes }
+}
+
+async function writeRowLater(s: Submission): Promise<void> {
+  try {
+    await appendToSheet(s)
+  } catch (err) {
+    console.error(`[ESP form] sheet failed (${s.kind}, ${s.contact.email}): ${err instanceof Error ? err.message : String(err)}`)
+  }
 }
 
 async function sendTeamNotification(s: Submission): Promise<'sent' | 'skipped'> {
@@ -59,6 +81,10 @@ async function sendConfirmation(s: Submission): Promise<'sent' | 'skipped'> {
   const email = renderConfirmation(s)
   await sendEmail({ to: s.contact.email, replyTo: replyToAddress(), tags: [{ name: 'form', value: s.kind }, { name: 'audience', value: 'applicant' }], ...email })
   return 'sent'
+}
+
+function settle<T>(p: Promise<T>): Promise<PromiseSettledResult<T>> {
+  return p.then(value => ({ status: 'fulfilled', value }) as const, reason => ({ status: 'rejected', reason }) as const)
 }
 
 function toOutcome(channel: Channel, r: PromiseSettledResult<'sent' | 'skipped'>): Outcome {

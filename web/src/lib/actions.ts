@@ -2,6 +2,7 @@
 
 import { z } from 'zod'
 import { headers } from 'next/headers'
+import { after } from 'next/server'
 import { rateLimit } from './rate-limit'
 import { deliverSubmission } from './deliver'
 import { SHEET_TABS, type Submission } from './submissions'
@@ -73,6 +74,7 @@ export async function submitApply(_prev: FormState, formData: FormData): Promise
 
   const d = result.data
   const submission: Submission = {
+    id: crypto.randomUUID(),
     kind: 'apply',
     label: 'Priority List Application',
     sheet: SHEET_TABS.apply,
@@ -92,7 +94,7 @@ export async function submitApply(_prev: FormState, formData: FormData): Promise
     ],
   }
 
-  const report = await deliverSubmission(submission)
+  const report = await deliverSubmission(submission, { defer: after })
   if (!report.captured) return { success: false, message: TRY_AGAIN }
 
   return {
@@ -127,6 +129,7 @@ export async function submitPartnerInquiry(_prev: FormState, formData: FormData)
   const d = result.data
   const isTeamTrip = d.inquiryType === 'Team trip'
   const submission: Submission = {
+    id: crypto.randomUUID(),
     kind: isTeamTrip ? 'team-trip' : 'club-partnership',
     label: isTeamTrip ? 'Team Trip Inquiry' : 'Club Partnership Inquiry',
     sheet: SHEET_TABS.partner,
@@ -142,7 +145,7 @@ export async function submitPartnerInquiry(_prev: FormState, formData: FormData)
     ],
   }
 
-  const report = await deliverSubmission(submission)
+  const report = await deliverSubmission(submission, { defer: after })
   if (!report.captured) return { success: false, message: TRY_AGAIN }
 
   const next = isTeamTrip ? "We'll be in touch to start planning your team's trip." : "We'll be in touch about partnership opportunities."

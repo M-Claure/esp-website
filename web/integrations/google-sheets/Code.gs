@@ -7,8 +7,12 @@
  * Full walkthrough: docs/FORM_SUBMISSIONS.md in the repo.
  *
  * The site POSTs JSON shaped like:
- *   { secret: "…", sheet: "Priority List", submittedAt: "2026-09-15T17:30:00.000Z",
- *     row: { "Type": "Priority List Application", "Parent name": "…", "Email": "…", … } }
+ *   { secret: "…", id: "6f1c…", sheet: "Priority List", submittedAt: "2026-09-15T17:30:00.000Z",
+ *     row: { "Type": "Priority List Application", "Parent name": "…", …, "Submission ID": "6f1c…" } }
+ *
+ * `id` makes writes idempotent: if a row with that Submission ID already exists, the request is
+ * acknowledged without writing again. The site retries a timed-out write, so this is what keeps a
+ * slow response from turning into a duplicate row.
  *
  * Each `sheet` gets its own tab (created on first use). The header row is written from the
  * row's keys the first time; after that, values are matched to columns BY HEADER NAME, so you
@@ -52,6 +56,11 @@ function doPost(e) {
       }
     }
 
+    if (body.id) {
+      var existing = findRowById_(sheet, headers, String(body.id))
+      if (existing) return json_({ ok: true, duplicate: true, sheet: sheet.getName(), row: existing })
+    }
+
     var values = headers.map(function (h) { return h in row ? cell_(row[h]) : '' })
     var target = sheet.getRange(sheet.getLastRow() + 1, 1, 1, headers.length)
     // Plain-text format first so a value like "=HYPERLINK(...)" or "+1 305…" is stored as text,
@@ -69,6 +78,18 @@ function doPost(e) {
 // Visiting the /exec URL in a browser gives a quick "is it deployed?" check.
 function doGet() {
   return json_({ ok: true, message: 'ESP form webhook is live. POST JSON to this URL.' })
+}
+
+// Row number of an existing submission with this id, or 0. Scans the "Submission ID" column only.
+function findRowById_(sheet, headers, id) {
+  var col = headers.indexOf('Submission ID')
+  var lastRow = sheet.getLastRow()
+  if (col === -1 || lastRow < 2) return 0
+  var ids = sheet.getRange(2, col + 1, lastRow - 1, 1).getValues()
+  for (var i = 0; i < ids.length; i++) {
+    if (String(ids[i][0]) === id) return i + 2
+  }
+  return 0
 }
 
 function readHeaders_(sheet) {

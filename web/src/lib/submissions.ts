@@ -7,6 +7,8 @@ export type SubmissionKind = 'apply' | 'team-trip' | 'club-partnership'
 export type SubmissionField = { label: string; value: string }
 
 export type Submission = {
+  /** Random UUID minted per submission. Lets the sheet ignore a retried write it already has. */
+  id: string
   kind: SubmissionKind
   /** Human label used in email subjects and the sheet's "Type" column, e.g. "Priority List Application". */
   label: string
