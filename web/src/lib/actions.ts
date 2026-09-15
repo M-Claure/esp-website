@@ -3,6 +3,8 @@
 import { z } from 'zod'
 import { headers } from 'next/headers'
 import { rateLimit } from './rate-limit'
+import { deliverSubmission } from './deliver'
+import { SHEET_TABS, type Submission } from './submissions'
 
 const ApplySchema = z.object({
   parentName: z.string().min(1, 'Parent name is required').max(200),
@@ -38,40 +40,11 @@ export type FormState = {
   errors?: Record<string, string[]>
 }
 
+const TRY_AGAIN = "We couldn't save your submission just now. Please try again in a moment — and if it keeps happening, email us directly."
+
 async function getClientIP(): Promise<string> {
   const h = await headers()
   return h.get('x-forwarded-for')?.split(',')[0]?.trim() ?? h.get('x-real-ip') ?? 'unknown'
-}
-
-async function submitToBackend(type: string, data: Record<string, unknown>) {
-  const resendKey = process.env.RESEND_API_KEY
-  const sheetWebhook = process.env.GOOGLE_SHEET_WEBHOOK_URL
-
-  if (resendKey) {
-    const to = process.env.FORM_RECIPIENT_EMAIL ?? 'hello@eurosoccerpassport.com'
-    await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: { Authorization: `Bearer ${resendKey}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        from: 'ESP Forms <forms@eurosoccerpassport.com>',
-        to,
-        subject: `[ESP] New ${type} submission`,
-        text: Object.entries(data).map(([k, v]) => `${k}: ${v}`).join('\n'),
-      }),
-    })
-    return
-  }
-
-  if (sheetWebhook) {
-    await fetch(sheetWebhook, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ type, ...data, submittedAt: new Date().toISOString() }),
-    })
-    return
-  }
-
-  console.log(`[ESP Form: ${type}]`, JSON.stringify({ ...data, submittedAt: new Date().toISOString() }, null, 2))
 }
 
 export async function submitApply(_prev: FormState, formData: FormData): Promise<FormState> {
@@ -98,9 +71,36 @@ export async function submitApply(_prev: FormState, formData: FormData): Promise
     return { success: false, message: 'Please fix the errors below.', errors: result.error.flatten().fieldErrors as Record<string, string[]> }
   }
 
-  const { _honey, ...data } = result.data
-  await submitToBackend('Priority List Application', data)
-  return { success: true, message: "You're on the list! We'll be in touch with next steps." }
+  const d = result.data
+  const submission: Submission = {
+    kind: 'apply',
+    label: 'Priority List Application',
+    sheet: SHEET_TABS.apply,
+    submittedAt: new Date().toISOString(),
+    contact: { name: d.parentName, email: d.email },
+    // Labels here become the sheet's column headers and the rows in both emails.
+    fields: [
+      { label: 'Parent name', value: d.parentName },
+      { label: 'Email', value: d.email },
+      { label: 'Mobile', value: d.mobile },
+      { label: 'Player age', value: String(d.playerAge) },
+      { label: 'Gender', value: d.gender },
+      { label: 'Home city', value: d.homeCity },
+      { label: 'Current club', value: d.currentClub },
+      { label: 'Travel period', value: d.travelPeriod },
+      { label: 'Interested in', value: d.interest },
+    ],
+  }
+
+  const report = await deliverSubmission(submission)
+  if (!report.captured) return { success: false, message: TRY_AGAIN }
+
+  return {
+    success: true,
+    message: report.confirmationSent
+      ? `We've sent a confirmation to ${d.email}. We'll be in touch with next steps, available dates and pricing.`
+      : "We'll be in touch with next steps, available dates and pricing.",
+  }
 }
 
 export async function submitPartnerInquiry(_prev: FormState, formData: FormData): Promise<FormState> {
@@ -124,8 +124,30 @@ export async function submitPartnerInquiry(_prev: FormState, formData: FormData)
     return { success: false, message: 'Please fix the errors below.', errors: result.error.flatten().fieldErrors as Record<string, string[]> }
   }
 
-  const { _honey, ...data } = result.data
-  const isTeamTrip = data.inquiryType === 'Team trip'
-  await submitToBackend(isTeamTrip ? 'Team Trip Inquiry' : 'Club Partnership Inquiry', data)
-  return { success: true, message: isTeamTrip ? "Thanks! We'll be in touch to start planning your team's trip." : "Thanks! We'll be in touch about partnership opportunities." }
+  const d = result.data
+  const isTeamTrip = d.inquiryType === 'Team trip'
+  const submission: Submission = {
+    kind: isTeamTrip ? 'team-trip' : 'club-partnership',
+    label: isTeamTrip ? 'Team Trip Inquiry' : 'Club Partnership Inquiry',
+    sheet: SHEET_TABS.partner,
+    submittedAt: new Date().toISOString(),
+    contact: { name: d.contactName, email: d.email },
+    fields: [
+      { label: 'Inquiry type', value: d.inquiryType },
+      { label: 'Club or team name', value: d.clubName },
+      { label: 'Contact name', value: d.contactName },
+      { label: 'Email', value: d.email },
+      { label: 'Role', value: d.role },
+      { label: 'Message', value: d.message?.trim() ?? '' },
+    ],
+  }
+
+  const report = await deliverSubmission(submission)
+  if (!report.captured) return { success: false, message: TRY_AGAIN }
+
+  const next = isTeamTrip ? "We'll be in touch to start planning your team's trip." : "We'll be in touch about partnership opportunities."
+  return {
+    success: true,
+    message: report.confirmationSent ? `We've sent a confirmation to ${d.email}. ${next}` : next,
+  }
 }
