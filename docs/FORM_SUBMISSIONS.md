@@ -51,15 +51,15 @@ This stops anyone who discovers the URL from writing junk into your sheet.
 
 Open the `/exec` URL in a browser — you should see `{"ok":true,"message":"ESP form webhook is live…"}`.
 
-Then send a real test row from your terminal (paste your URL and secret):
+Then send a real test row from your terminal — one line, with your URL and secret pasted in:
 
 ```bash
-curl -sL -X POST "PASTE_EXEC_URL" \
-  -H 'Content-Type: application/json' \
-  -d '{"secret":"PASTE_SECRET","sheet":"Priority List","submittedAt":"2026-09-15T17:00:00Z","row":{"Type":"Test","Parent name":"Test Parent","Email":"test@example.com"}}'
+curl -sL "PASTE_EXEC_URL" -H 'Content-Type: application/json' -d '{"secret":"PASTE_SECRET","sheet":"Priority List","submittedAt":"2026-09-15T17:00:00Z","row":{"Type":"Test","Parent name":"Test Parent","Email":"test@example.com"}}'
 ```
 
 Expected: `{"ok":true,"sheet":"Priority List","row":2}` and a new **Priority List** tab in the sheet with a bold header row and one row of data. Delete the test row (keep the headers).
+
+> Don't add `-X POST` to that command. Apps Script answers a POST with a redirect to `script.googleusercontent.com`, which only accepts GET; `-d` already makes the first request a POST, and `-L` then correctly switches to GET for the redirect — exactly what the site's own code does. With `-X POST`, curl forces POST on the redirect too and Google replies with a "Sorry, unable to open the file at this time" page.
 
 > **Editing the script later?** Saving the file is not enough — the live URL keeps running the old version until you go **Deploy → Manage deployments → ✎ (edit) → Version: New version → Deploy**. The URL stays the same.
 
@@ -175,6 +175,7 @@ After the redeploy in 3.2, do the same on the live site. If anything misbehaves,
 | Symptom | Likely cause → fix |
 |---|---|
 | Log says *webhook returned non-JSON … check "Who has access: Anyone"* | The deployment isn't set to **Anyone**, or you copied the `/dev` URL instead of `/exec`. Redo 1.4. |
+| curl test returns a Google page saying *Sorry, unable to open the file at this time* | You ran it with `-X POST`. Drop that flag (see the note in 1.5). If it still fails, open the `/exec` URL in a browser — no JSON there means the deployment itself is wrong. |
 | Log says *rejected the row: Bad secret* | `GOOGLE_SHEET_WEBHOOK_SECRET` on Vercel doesn't match the `WEBHOOK_SECRET` script property. Check for trailing spaces. |
 | Log says *Script property WEBHOOK_SECRET is not set* | Step 1.3 was skipped or saved under a different name. |
 | You edited `Code.gs` but behaviour didn't change | You need a **new version** of the deployment (see the note at the end of Part 1). |
