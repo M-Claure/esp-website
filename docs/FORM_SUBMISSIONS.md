@@ -183,7 +183,7 @@ After the redeploy in 3.2, do the same on the live site. If anything misbehaves,
 | Resend `422` … *You can only send testing emails to your own email address* | Same thing — domain not verified yet. |
 | Resend `401` | Wrong or revoked `RESEND_API_KEY`, or the key was created with *Full access* restricted to a different domain. |
 | Resend `429` | Free-plan daily cap (100 emails = 50 submissions) hit. Upgrade or wait until the next day; the sheet row and log still happen. |
-| Confirmation lands in spam | Add the DMARC record (2.1 step 3), make sure `EMAIL_FROM` is on the verified domain, and avoid changing the from-address often. New domains build reputation over the first few weeks. |
+| Confirmation lands in spam / junk | First read the message headers (Outlook: ⋯ → View → *View message source*; Gmail: ⋮ → *Show original*) and find `Authentication-Results`. If `dkim` or `dmarc` isn't `pass`, fix the DNS records in Resend → Domains (the domain's DMARC is `p=quarantine`, so any auth failure goes to junk). If all pass, it's sender reputation: don't send from `no-reply@` (use a real mailbox like `hello@`), mark it *Not junk* / add to safe senders in your own inbox, keep the from-address stable, and score a test at mail-tester.com. New domains build reputation over the first few weeks. |
 | Sheet gets a row but no emails, or vice-versa | Channels are independent — check the log line for the channel that's missing. |
 | A column shows up twice in the sheet | Someone renamed a header. The script matches by exact header text; rename it back (or accept the new column and delete the old one once it's empty). |
 | *Too many submissions* on screen while testing | You hit the 5/minute rate limit. Wait a minute. |
