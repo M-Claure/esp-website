@@ -19,7 +19,7 @@ export const playerOnly: TravelOption = {
   tag: 'Ages 13–18',
   image: siteImages.travelPlayerOnly,
   imageAlt: 'Player with ESP staff at airport',
-  checklist: ['No team needed — join an ESP group', 'Fly to designated airport', 'ESP airport pickup', 'Supervised program', 'Lodging, meals & transportation', 'Airport drop-off'],
+  checklist: ['No team needed — ESP groups, subject to availability', 'Fly to designated airport', 'ESP airport pickup', 'Supervised program', 'Lodging, meals & transportation', 'Airport drop-off'],
 }
 
 export const playerFamily: TravelOption = {
@@ -27,7 +27,7 @@ export const playerFamily: TravelOption = {
   tag: 'All ages · required for 8–12',
   image: siteImages.travelPlayerFamily,
   imageAlt: 'Family exploring Spanish city',
-  checklist: ['No team needed — join an ESP group', 'Player joins the full program', 'Family enjoys companion experience', 'Separate hotels & activities'],
+  checklist: ['No team needed — ESP groups, subject to availability', 'Player joins the full program', 'Family enjoys companion experience', 'Separate hotels & activities'],
 }
 
 export const fullTeam: TravelOption = {

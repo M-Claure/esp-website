@@ -37,7 +37,7 @@ const howItWorks = [
 ]
 
 const audiences = [
-  { icon: User, title: 'PLAYERS & FAMILIES', text: 'No team needed. Each player joins an ESP group matched by age and level. Ages 8–12 travel with a parent or guardian; ages 13–18 can also travel on their own.', ...paths.player },
+  { icon: User, title: 'PLAYERS & FAMILIES', text: 'No team needed. Players may be able to join an ESP-organized group based on age, level, destination and availability. Ages 8–12 travel with a parent or guardian; ages 13–18 can also travel on their own.', ...paths.player },
   { icon: Users, title: 'FULL TEAMS', text: 'Players and coaches travel together. ESP builds the European side: club access, matches, lodging and logistics.', ...paths.teamTrip },
   { icon: Building2, title: 'U.S. CLUBS & COACHES', text: 'Offer your players international access, player development and a memorable family benefit — without building European operations.', ...paths.club },
 ]
@@ -55,7 +55,7 @@ const days = [
 
 const faqs = [
   { q: 'Can my child travel without us?', a: 'Yes, for players ages 13–18 — we meet them at the designated local airport and supervise the program through departure. Players ages 8–12 travel with a parent or guardian.' },
-  { q: 'Does my child need a team to join?', a: 'No. Individual players join ESP groups matched by age and level, with players from across the U.S. Clubs and teams can also book the experience together.' },
+  { q: 'What if my child is not traveling with a full team?', a: 'Players may be able to join an ESP-organized group based on age, competitive level, destination and availability.' },
   { q: 'Does my child need to speak Spanish?', a: 'No. Bilingual ESP staff and/or translators help players communicate with coaches, teammates and local staff throughout the experience.' },
   { q: 'Is this only for elite players?', a: 'No. Players should love the game and be ready for the experience. Groups and competition are matched appropriately.' },
   { q: 'Is this for girls too?', a: `Absolutely. ESP experiences are for boys and girls ages ${AGE_RANGE}, with appropriate programming and competition.` },

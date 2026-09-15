@@ -30,7 +30,7 @@ const parentCards = [
 
 const faqs = [
   { q: 'Can my child travel without us?', a: 'Yes, for players ages 13–18 — we meet them at the designated local airport and supervise the program through departure. Players ages 8–12 travel with a parent or guardian.' },
-  { q: 'Does my child need a team to join?', a: 'No. Individual players join ESP groups matched by age and level, with players from across the U.S. Clubs and teams can also book the experience together.' },
+  { q: 'What if my child is not traveling with a full team?', a: 'Players may be able to join an ESP-organized group based on age, competitive level, destination and availability.' },
   { q: 'Does my child need to speak Spanish?', a: 'No. Bilingual ESP staff and/or translators help players communicate with coaches, teammates and local staff throughout the experience.' },
   { q: 'Is this only for elite players?', a: 'No. Players should love the game and be ready for the experience. Groups and competition are matched appropriately.' },
   { q: 'Is this for girls too?', a: 'Absolutely. ESP experiences are for boys and girls ages 8–18, with appropriate programming and competition.' },
