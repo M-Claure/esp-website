@@ -9,7 +9,8 @@ const SLATE = '#525E68'
 const CREAM = '#F7F5EF'
 const MIST = '#E2E7EA'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://eurosoccerpassport.com'
+// `||` not `??`: an env var saved as an empty string (easy to do in the Vercel dashboard) must still fall back.
+const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://eurosoccerpassport.com').replace(/\/+$/, '')
 const TAGLINE = 'More than a trip. A different future.'
 const STRAP = 'Spain 2027 · Boys & Girls · Ages 8–18'
 
