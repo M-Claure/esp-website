@@ -43,6 +43,10 @@ export type FormState = {
 
 const TRY_AGAIN = "We couldn't save your submission just now. Please try again in a moment — and if it keeps happening, email us directly."
 
+function confirmationNote(email: string): string {
+  return `We've sent a confirmation to ${email}. If it's not in your inbox, please check your junk or spam folder.`
+}
+
 async function getClientIP(): Promise<string> {
   const h = await headers()
   return h.get('x-forwarded-for')?.split(',')[0]?.trim() ?? h.get('x-real-ip') ?? 'unknown'
@@ -97,11 +101,10 @@ export async function submitApply(_prev: FormState, formData: FormData): Promise
   const report = await deliverSubmission(submission, { defer: after })
   if (!report.captured) return { success: false, message: TRY_AGAIN }
 
+  const next = "We'll be in touch with next steps, available dates and pricing."
   return {
     success: true,
-    message: report.confirmationSent
-      ? `We've sent a confirmation to ${d.email}. We'll be in touch with next steps, available dates and pricing.`
-      : "We'll be in touch with next steps, available dates and pricing.",
+    message: report.confirmationSent ? `${confirmationNote(d.email)} ${next}` : next,
   }
 }
 
@@ -151,6 +154,6 @@ export async function submitPartnerInquiry(_prev: FormState, formData: FormData)
   const next = isTeamTrip ? "We'll be in touch to start planning your team's trip." : "We'll be in touch about partnership opportunities."
   return {
     success: true,
-    message: report.confirmationSent ? `We've sent a confirmation to ${d.email}. ${next}` : next,
+    message: report.confirmationSent ? `${confirmationNote(d.email)} ${next}` : next,
   }
 }
